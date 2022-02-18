@@ -1,0 +1,26 @@
+{
+  "starters1": {
+    "id": "1",
+    "img": "imges/antipasto-garlic.jpeg",
+    "description": "A fiery antipasto featuring red-hot jalapeño peppers and crunchy cloves of pickled garlic in tangy marinade.",
+    "price": "10 JD"
+  },
+  "starters2": {
+    "id": "2",
+    "img": "imges/bruschetta.jpeg",
+    "description": "m Italy consisting of grilled bread rubbed with garlic and topped with olive oil and salt.",
+    "price": "5 JD"
+  },
+  "starters3": {
+    "id": "3",
+    "img": "imges/pappadum-stacks.jpeg",
+    "description": "A papadam or appalam is an Indian deep fried dough of black gram bean flour",
+    "price": "8 JD"
+  },
+  "starters4": {
+    "id": "4",
+    "img": "imges/sushi.jpeg",
+    "description": "a staple rice dish of Japanese cuisine, consisting of cooked rice flavoured with vinegar and a variety of vegetable",
+    "price": "18 JD"
+  }
+}
