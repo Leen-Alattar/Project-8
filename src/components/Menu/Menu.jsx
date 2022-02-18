@@ -1,4 +1,4 @@
-import menu from './Menu'
+import menu from '../Menu/menu.css'
 
 export const  Menu=()=>{
 
@@ -18,9 +18,6 @@ export const  Menu=()=>{
 						</form>
 					</div>
 				</div>
-
-
-
 
 {/* <Filter /> */}
      </div>

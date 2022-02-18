@@ -9,11 +9,10 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<div>hi</div>}></Route>
+        <Route path="/" element={<Header/>}></Route>
         <Route path="booking" element={<Booking />}></Route>
         <Route path="*" element={<Error />}></Route>
       </Routes>
-<Header/>
 <Menu/>
 
     </>
