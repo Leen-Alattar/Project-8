@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --mainColor: #f04900
+}
+
+.table-container {
+    width: 80%;
+margin: 90px  auto;
+    display: flex;
+}
+
+.table {
+    overflow-x: auto;
+    border-collapse: collapse;
+    width: 68%;
+    margin: 1%;
+    border: 1px solid #ddd;
+    border-spacing: 50px;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr {
+    padding: 20px;
+}
+
+.delete-btn {
+    font-size: 20px;
+    background-color: transparent;
+    transition: all .3s;
+    border: none;
+    border-radius: 50%;
+
+}
+
+.delete-btn:hover {
+    color: var(--mainColor);
+}
+
+.quantity-td {
+    display: flex;
+}
+
+.btn-minus,
+.btn-plus {
+    padding: 5px;
+    border: 1px solid var(--mainColor);
+    background-color: var(--mainColor);
+    color: white;
+    transform: translateY(0);
+    transition: all .2s;
+
+}
+
+.btn-minus:hover,
+.btn-plus:hover {
+    transform: translateY(-2px)
+}
+
+.quantity-input {
+    width: 30px;
+    padding: 5px;
+    border: 1px solid var(--mainColor);
+    text-align: center;
+}
+
+.quantity-input:focus {
+    border: var(--mainColor);
+    outline: none;
+}
+
+.check-out {
+ width: 38%;
+ margin: 1%;
+ background-color: rgb(187, 185, 185);
+}
+
+@media(max-width: 768px) {
+    .table-container {
+        margin: 20px 10px;
+      flex-direction: column;
+      align-items: center;
+    }
+    .table{
+        width:98%;
+    }
+    .check-out{
+        width: 50%;
+        height: 50px;
+        align-self: flex-end;
+    }
+}
+@media(max-width:426px){
+    .check-out{
+        width: 98%;
+        height: 50px;
+        align-self: flex-end;
+    }   
+}
