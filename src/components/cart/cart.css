@@ -5,12 +5,13 @@
 }
 
 :root {
-    --mainColor: #f04900
+    --mainColor: #f04900;
+    --borderColor :#ddd;
 }
 
 .table-container {
     width: 80%;
-margin: 90px  auto;
+    margin: 90px  auto;
     display: flex;
 }
 
@@ -19,7 +20,7 @@ margin: 90px  auto;
     border-collapse: collapse;
     width: 68%;
     margin: 1%;
-    border: 1px solid #ddd;
+    border: 1px solid var(--borderColor);
     border-spacing: 50px;
 }
 
@@ -78,15 +79,21 @@ tr {
     outline: none;
 }
 
+/* Book Order area */
 .check-out {
- width: 38%;
- margin: 1%;
- background-color: rgb(187, 185, 185);
+    width: 38%;
+    margin: 1%;
+    border: 1px solid var(--borderColor);
+   }
+.check-out h3{
+    width: 100%;
+    border-bottom: 1px solid var(--borderColor);
+    padding: 10px;
 }
-
 @media(max-width: 768px) {
     .table-container {
-        margin: 20px 10px;
+        width: 100%;
+        margin: 20px 30px ;
       flex-direction: column;
       align-items: center;
     }

@@ -2,23 +2,17 @@ import React, { useEffect, useState } from "react";
 
 const CartDish = ({ cart, setCart, dish }) => {
   const [count, setCount] = useState(1);
-  const [total, setTotal] = useState();
+  const [total, setTotal] = useState(dish.price);
 
   let incrementCount = () => {
-    
-
-    // console.log(sesscart);
     setCount(count + 1);
-    setTotal(count===1?dish.price:count * dish.price);
-    // const newCart = sesscart.map((d) =>
-    //   d.id === dish.id ? { ...d, total: total } : d
-    // );
-    //    setCart(newCart);
+   
+ 
+    
   };
 
   let decrementCount = () => {
     if (count >= 2) setCount(count - 1);
-    setTotal(count * dish.price);
   };
 
   //delete dish from the cart
@@ -30,9 +24,12 @@ const CartDish = ({ cart, setCart, dish }) => {
     sessionStorage.setItem("cart", JSON.stringify(remainder));
     setCart(remainder);
   };
-  //   useEffect(() => {
-  //     sessionStorage.setItem("cart", JSON.stringify(cart));
-  //   }, [cart]);
+  
+  useEffect(() => {
+    setTotal(count * dish.price);
+  }, [count,dish.price]);
+  
+  
   return (
     <tr>
       <td>Jill</td>
