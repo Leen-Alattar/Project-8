@@ -6,8 +6,8 @@ import "./style/style.css";
 function App() {
   return (
     <>
-      <div>hi</div>
       <Routes>
+        <Route path="/" element={<div>hi</div>}></Route>
         <Route path="booking" element={<Booking />}></Route>
         <Route path="*" element={<Error />}></Route>
       </Routes>
