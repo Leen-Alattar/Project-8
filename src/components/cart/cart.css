@@ -22,6 +22,7 @@ table {
     padding: 0;
     width: 100%;
     table-layout: fixed;
+    
 }
 
 table tr {
@@ -44,55 +45,6 @@ table th {
 
 .quantity-td div {
     margin-top: 15px;
-}
-
-@media screen and (max-width: 600px) {
-    table {
-        border: 0;
-    }
-
-    .quantity-td div {
-        margin-left: 59%;
-    }
-
-    table thead {
-        border: none;
-        clip: rect(0 0 0 0);
-        height: 1px;
-        margin: -1px;
-        overflow: hidden;
-        padding: 0;
-        position: absolute;
-        width: 1px;
-    }
-
-    table tr {
-        border-bottom: 3px solid #ddd;
-        display: block;
-        margin-bottom: .625em;
-    }
-
-    table td {
-        border-bottom: 1px solid #ddd;
-        display: block;
-        font-size: .8em;
-        text-align: right;
-    }
-
-    table td::before {
-        /*
-      * aria-label has no advantage, it won't be read inside a table
-      content: attr(aria-label);
-      */
-        content: attr(data-label);
-        float: left;
-        font-weight: bold;
-        text-transform: uppercase;
-    }
-
-    table td:last-child {
-        border-bottom: 0;
-    }
 }
 
 .delete-btn {
@@ -146,12 +98,67 @@ table th {
     width: 38%;
     margin: 0 1%;
     border: 1px solid var(--borderColor);
+    height: 250px;
+    border: 1px solid #ccc;
+    background-color: #F8F8F8;
 }
 
-.check-out h3 {
+.check-out h1 {
     width: 100%;
     border-bottom: 1px solid var(--borderColor);
     padding: 10px;
+    font-size: 1.2em;
+    letter-spacing: .1em;
+    color: #686868;
+
+}
+
+.check-out div {
+    width: 90%;
+
+}
+
+.total-cart {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 10px 20px;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.book-option {
+    margin: 10px 10px 20px;
+    flex-direction: column;
+    justify-content: flex-start
+}
+
+.book-option input {
+    margin-right: 20px;
+}
+
+.check-out button {
+    float: right;
+    margin-right: 10px;
+    width: 60%;
+    font-size: 20px;
+    border: none;
+    background-color: var(--mainColor);
+    color: #fff;
+    transform: translateY(0);
+    transition: all .3s;
+    border-radius: 5px;
+}
+
+.check-out button:hover {
+    transform: translateY(-3px);
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
 }
 
 @media(max-width: 768px) {
@@ -162,15 +169,65 @@ table th {
     }
 
     .check-out {
-        width: 98%;
+        width: 100%;
         align-self: flex-end;
+        margin: 20px 0;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    table {
+        border: 0;
+    }
+
+    .quantity-td div {
+        margin-left: 59%;
+    }
+
+    table thead {
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+
+    table tr {
+        border-bottom: 3px solid #ddd;
+        display: block;
+        margin-bottom: .625em;
+    }
+
+    table td {
+        border-bottom: 1px solid #ddd;
+        display: block;
+        font-size: .8em;
+        text-align: right;
+    }
+
+    table td::before {
+        /*
+      * aria-label has no advantage, it won't be read inside a table
+      content: attr(aria-label);
+      */
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    table td:last-child {
+        border-bottom: 0;
     }
 }
 
 @media(max-width:426px) {
     .check-out {
         width: 98%;
-        height: 50px;
+
         align-self: flex-end;
     }
 

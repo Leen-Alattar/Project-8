@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 
-const CartDish = ({ cart, setCart, dish }) => {
+const CartDish = ({ cart, setCart, dish, setTotalCart, totalCart }) => {
   const [count, setCount] = useState(dish.total);
   const [total, setTotal] = useState(dish.price * dish.total);
-
+  var countTotal = 0;
   let incrementCount = () => {
     setCount(count + 1);
   };
@@ -21,45 +21,61 @@ const CartDish = ({ cart, setCart, dish }) => {
     sessionStorage.setItem("cart", JSON.stringify(remainder));
     setCart(remainder);
   };
+  useEffect(() => {
+    let updateCart = JSON.parse(sessionStorage.getItem("cart"));
+    let sum = updateCart.reduce(
+      (countTotal, item) => countTotal + item.total * item.price,
+      0
+    );
+    setTotalCart(sum);
 
+  }, []);
   useEffect(() => {
     setTotal(count * dish.price);
     updateTotal();
-    //
   }, [count]);
 
   const updateTotal = () => {
     let updateCart = JSON.parse(sessionStorage.getItem("cart"));
-    updateCart = updateCart.map((el) => el.id == dish.id ?  {...el,total:count}: el
+    updateCart = updateCart.map((el) =>
+      el.id == dish.id ? { ...el, total: count } : el
     );
+    setCart(updateCart);
     sessionStorage.setItem("cart", JSON.stringify(updateCart));
+    let sum = updateCart.reduce(
+      (countTotal, item) => countTotal + item.total * item.price,
+      0
+    );
+    setTotalCart(sum);
+
   };
   return (
     <tr>
-      <td  data-label="Dish">
+      <td data-label="Dish">
         <img width="100px" src={dish.img} alt="" />
       </td>
-      <td data-label="Dish Name" >{dish.name}</td>
-      <td data-label="Price" > {dish.price} JD</td>
+      <td data-label="Dish Name">{dish.name}</td>
+      <td data-label="Price"> {dish.price} JD</td>
       <td data-label="Quantity" className="quantity-td">
         <div>
-        <button className="btn-minus" type="button" onClick={decrementCount}>
-          &#9866;
-        </button>
+          <button className="btn-minus" type="button" onClick={decrementCount}>
+            &#9866;
+          </button>
 
-        <input
-          type="text"
-          className="quantity-input"
-          value={count}
-          placeholder=""
-          aria-label="Example text with button addon"
-          aria-describedby="button-addon1"
-          readOnly
-        />
+          <input
+            type="text"
+            className="quantity-input"
+            value={count}
+            placeholder=""
+            aria-label="Example text with button addon"
+            aria-describedby="button-addon1"
+            readOnly
+          />
 
-        <button className="btn-plus" type="button" onClick={incrementCount}>
-          &#10011;
-        </button></div>
+          <button className="btn-plus" type="button" onClick={incrementCount}>
+            &#10011;
+          </button>
+        </div>
       </td>
       <td data-label="Price">{total} JD</td>
       <td data-label="Delete Dish">
@@ -67,7 +83,6 @@ const CartDish = ({ cart, setCart, dish }) => {
           &#10008;
         </button>
       </td>
-      
     </tr>
   );
 };

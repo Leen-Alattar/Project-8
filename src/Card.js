@@ -2,7 +2,6 @@ import React from "react";
 import  "./style.css";
 
 const Card = ({ item ,setItem ,cart, setCart }) => {
-
   const addToCartHandler = (dish) => {
     if (sessionStorage.getItem("cart") == null) {
       sessionStorage.setItem("cart", JSON.stringify([dish]));
@@ -11,7 +10,7 @@ const Card = ({ item ,setItem ,cart, setCart }) => {
       let exist = cart.filter((meal) =>
       { if( meal.id == dish.id) return meal}
       );
-      console.log(cart);
+  
       if (exist.length !== 0) {
         let c = cart.map((meal) => {
           if (meal.id == dish.id) {
