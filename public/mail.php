@@ -28,14 +28,14 @@ if(trim($form_name) == '') {
 	exit();
 }
 
-if(trim($date-picker) == '') {
-	echo '<div class="error_message">Attention! Please enter your date.</div>';
-	exit();
-}
+// if(trim($date-picker) == '') {
+// 	echo '<div class="error_message">Attention! Please enter your date.</div>';
+// 	exit();
+// }
 
-if(get_magic_quotes_gpc()) {
-	$comments = stripslashes($comments);
-}
+// if(get_magic_quotes_gpc()) {
+// 	$comments = stripslashes($comments);
+// }
 
 
 // Configuration option.

@@ -1,24 +1,15 @@
 import React, { useEffect, useState } from "react";
 
 const CartDish = ({ cart, setCart, dish }) => {
-  const [count, setCount] = useState(1);
-  const [total, setTotal] = useState();
+  const [count, setCount] = useState(dish.total);
+  const [total, setTotal] = useState(dish.price * dish.total);
 
   let incrementCount = () => {
-    
-
-    // console.log(sesscart);
     setCount(count + 1);
-    setTotal(count===1?dish.price:count * dish.price);
-    // const newCart = sesscart.map((d) =>
-    //   d.id === dish.id ? { ...d, total: total } : d
-    // );
-    //    setCart(newCart);
   };
 
   let decrementCount = () => {
     if (count >= 2) setCount(count - 1);
-    setTotal(count * dish.price);
   };
 
   //delete dish from the cart
@@ -30,15 +21,28 @@ const CartDish = ({ cart, setCart, dish }) => {
     sessionStorage.setItem("cart", JSON.stringify(remainder));
     setCart(remainder);
   };
-  //   useEffect(() => {
-  //     sessionStorage.setItem("cart", JSON.stringify(cart));
-  //   }, [cart]);
+
+  useEffect(() => {
+    setTotal(count * dish.price);
+    updateTotal();
+    //
+  }, [count]);
+
+  const updateTotal = () => {
+    let updateCart = JSON.parse(sessionStorage.getItem("cart"));
+    updateCart = updateCart.map((el) => el.id == dish.id ?  {...el,total:count}: el
+    );
+    sessionStorage.setItem("cart", JSON.stringify(updateCart));
+  };
   return (
     <tr>
-      <td>Jill</td>
-      <td>Smith</td>
-      <td> {dish.price} JD</td>
-      <td className="quantity-td">
+      <td  data-label="Dish">
+        <img width="100px" src={dish.img} alt="" />
+      </td>
+      <td data-label="Dish Name" >{dish.name}</td>
+      <td data-label="Price" > {dish.price} JD</td>
+      <td data-label="Quantity" className="quantity-td">
+        <div>
         <button className="btn-minus" type="button" onClick={decrementCount}>
           &#9866;
         </button>
@@ -55,14 +59,15 @@ const CartDish = ({ cart, setCart, dish }) => {
 
         <button className="btn-plus" type="button" onClick={incrementCount}>
           &#10011;
-        </button>
+        </button></div>
       </td>
-      <td>{total} JD</td>
-      <td>
+      <td data-label="Price">{total} JD</td>
+      <td data-label="Delete Dish">
         <button className="delete-btn" onClick={deleteHandle}>
           &#10008;
         </button>
       </td>
+      
     </tr>
   );
 };

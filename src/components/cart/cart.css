@@ -5,32 +5,94 @@
 }
 
 :root {
-    --mainColor: #f04900
+    --mainColor: #f04900;
+    --borderColor: #ddd;
 }
 
 .table-container {
     width: 80%;
-margin: 90px  auto;
+    margin: 150px auto;
     display: flex;
 }
 
-.table {
-    overflow-x: auto;
+table {
+    border: 1px solid #ccc;
     border-collapse: collapse;
-    width: 68%;
-    margin: 1%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    table-layout: fixed;
+}
+
+table tr {
+    background-color: #f8f8f8;
     border: 1px solid #ddd;
-    border-spacing: 50px;
+    padding: .35em;
 }
 
-th,
-td {
-    text-align: left;
-    padding: 8px;
+table th,
+table td {
+    padding: .625em;
+    text-align: center;
 }
 
-tr {
-    padding: 20px;
+table th {
+    font-size: .85em;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+.quantity-td div {
+    margin-top: 15px;
+}
+
+@media screen and (max-width: 600px) {
+    table {
+        border: 0;
+    }
+
+    .quantity-td div {
+        margin-left: 59%;
+    }
+
+    table thead {
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+
+    table tr {
+        border-bottom: 3px solid #ddd;
+        display: block;
+        margin-bottom: .625em;
+    }
+
+    table td {
+        border-bottom: 1px solid #ddd;
+        display: block;
+        font-size: .8em;
+        text-align: right;
+    }
+
+    table td::before {
+        /*
+      * aria-label has no advantage, it won't be read inside a table
+      content: attr(aria-label);
+      */
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    table td:last-child {
+        border-bottom: 0;
+    }
 }
 
 .delete-btn {
@@ -71,6 +133,7 @@ tr {
     padding: 5px;
     border: 1px solid var(--mainColor);
     text-align: center;
+    height: 37.20px;
 }
 
 .quantity-input:focus {
@@ -78,31 +141,56 @@ tr {
     outline: none;
 }
 
+/* Book Order area */
 .check-out {
- width: 38%;
- margin: 1%;
- background-color: rgb(187, 185, 185);
+    width: 38%;
+    margin: 0 1%;
+    border: 1px solid var(--borderColor);
+}
+
+.check-out h3 {
+    width: 100%;
+    border-bottom: 1px solid var(--borderColor);
+    padding: 10px;
 }
 
 @media(max-width: 768px) {
     .table-container {
-        margin: 20px 10px;
-      flex-direction: column;
-      align-items: center;
+
+        flex-direction: column;
+        align-items: center;
     }
-    .table{
-        width:98%;
-    }
-    .check-out{
-        width: 50%;
-        height: 50px;
+
+    .check-out {
+        width: 98%;
         align-self: flex-end;
     }
 }
-@media(max-width:426px){
-    .check-out{
+
+@media(max-width:426px) {
+    .check-out {
         width: 98%;
         height: 50px;
         align-self: flex-end;
-    }   
+    }
+
+    .quantity-input {
+        height: 32.25px;
+    }
+
+    .quantity-td div {
+        margin-top: 0;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    .quantity-td div {
+        margin-left: 52%;
+    }
+}
+
+@media screen and (max-width: 321px) {
+    .quantity-td div {
+        margin-left: 44%;
+    }
 }
