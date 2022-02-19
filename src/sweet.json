@@ -1,0 +1,30 @@
+[
+
+  {
+      "id": "13",
+      "name":"cocoa powder",
+      "img": "imges/sweet1.jpg",
+      "description": "cake flavored with melted chocolate ,cocoa powder",
+      "price": "20JD"
+    },
+   {
+      "id": "14",
+      "name":"cocoa powder with strawberry",
+      "img": "imges/sweet2.jpeg",
+     "description": " cake flavored with melted chocolate, cocoa powder with strawberry ",
+      "price": "10JD"
+    },
+    {
+      "id": "15",
+      "name":" chocolate ice-cream",
+      "img": "/imges/sweet3.jpg",
+      "description": " ice-cream flavored with melted chocolate,cocoa powder",
+      "price": "25JD"
+    },
+    {
+      "id": "16",
+      "name":"strawberry ice-cream",
+      "img": "/imges/sweet4.jpg",
+      "description": " ice-cream with strawberry flavored with melted chocolate, cocoa powder",
+      "price": "18JD"
+    }]
