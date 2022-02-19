@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from "react";
 
 const CartDish = ({ cart, setCart, dish }) => {
+console.log(dish.id);
   const [count, setCount] = useState(1);
   const [total, setTotal] = useState(dish.price);
 
   let incrementCount = () => {
     setCount(count + 1);
-   
- 
-    
   };
 
   let decrementCount = () => {
@@ -24,12 +22,19 @@ const CartDish = ({ cart, setCart, dish }) => {
     sessionStorage.setItem("cart", JSON.stringify(remainder));
     setCart(remainder);
   };
-  
+
   useEffect(() => {
     setTotal(count * dish.price);
-  }, [count,dish.price]);
-  
-  
+    updateTotal();
+    sessionStorage.setItem("cart", JSON.stringify(cart));
+  }, [count]);
+
+  const updateTotal =()=>{
+    let updateCart = JSON.parse(sessionStorage.getItem("cart"));
+    updateCart.map((el) =>  el.id == dish.id ? { ghosoun: "يا رب يزبط" }: "يا رب يزبط" 
+    );
+    setCart(updateCart);
+  }
   return (
     <tr>
       <td>Jill</td>

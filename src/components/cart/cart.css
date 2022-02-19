@@ -15,7 +15,7 @@
     display: flex;
 }
 
-.table {
+.cart-table{
     overflow-x: auto;
     border-collapse: collapse;
     width: 68%;
