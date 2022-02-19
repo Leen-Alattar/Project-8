@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Cart from "./components/cart/Cart";
 import { Routes, Route } from "react-router-dom";
 import Booking from "./components/Booking/Booking";
+import Registration from "./components/registration/registration";
+import Login from "./components/login/login";
 import Error from "./components/Error404/Error";
 
 import Card from "./Card.js";
@@ -23,6 +25,8 @@ const App = () => {
       <Routes>
         <Route path="booking" element={<Booking />}></Route>
         <Route path="/success" element={<ThankYou />}></Route>
+        <Route path="/register" element={<Registration />}></Route>
+        <Route path="/login" element={<Login />}></Route>
         <Route path="*" element={<Error />}></Route>
         <Route
           path="cart"
