@@ -10,6 +10,7 @@ import Buttons from "./Buttons";
 import { Header } from "./components/Header/Header.jsx";
 import Empty from "./components/cart/Empty";
 import Filter from "./components/filter/Filter";
+import ThankYou from "./components/ThankYou/ThankYou";
 
 const App = () => {
   const [cart, setCart] = useState([]);
@@ -21,6 +22,7 @@ const App = () => {
       <Header />
       <Routes>
         <Route path="booking" element={<Booking />}></Route>
+        <Route path="/success" element={<ThankYou />}></Route>
         <Route path="*" element={<Error />}></Route>
         <Route
           path="cart"
