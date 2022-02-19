@@ -62,13 +62,13 @@ function Booking() {
 
                 {/* <!-- end col --> */}
 
-                <div className="form-box">
+                <div className="form-box form-box-select">
                   <select
                     name="no_of_persons"
                     id="no_of_persons"
                     className="selectpicker"
                   >
-                    <option defaultValue disabled>
+                    <option selected disabled>
                       No. Of persons
                     </option>
                     <option>1</option>
@@ -81,7 +81,8 @@ function Booking() {
               <div className="flex">
                 <div className="form-box">
                   <input
-                    type="text"
+                    min={new Date().toISOString().split("T")[0]}
+                    type="date"
                     name="date-picker"
                     id="date-picker"
                     placeholder="Date"
@@ -94,7 +95,7 @@ function Booking() {
 
                 <div className="form-box">
                   <input
-                    type="text"
+                    type="time"
                     name="time-picker"
                     id="time-picker"
                     placeholder="Time"
@@ -105,13 +106,13 @@ function Booking() {
               </div>
               {/* <!-- end col --> */}
               <div className="flex">
-                <div className="form-box">
+                <div className="form-box form-box-select">
                   <select
                     name="preferred_food"
                     id="preferred_food"
                     className="selectpicker"
                   >
-                    <option defaultValue disabled>
+                    <option selected disabled>
                       preferred food
                     </option>
                     <option>Indian</option>
@@ -121,13 +122,13 @@ function Booking() {
                 </div>
                 {/* <!-- end col --> */}
 
-                <div className="form-box">
+                <div className="form-box form-box-select">
                   <select
                     name="occasion"
                     id="occasion"
                     className="selectpicker"
                   >
-                    <option defaultValue disabled>
+                    <option selected disabled>
                       Occasion
                     </option>
                     <option>Wedding</option>

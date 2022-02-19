@@ -1,0 +1,35 @@
+[
+
+    {
+        "id": 5,
+        "name":"Fruit juice",
+        "img": "imges/drink1.jpg",
+         "description": "refreshing fresh fruit juice that is full of vitamin C and antioxidants and lot of invigorating flavor.",
+         "price": 6 ,
+         "total":1
+       },
+      {
+       "id": 6,
+       "name":"Irish Coffee",
+         "img": "imges/drink2.jpg",
+         "description": "Coffee Ice Cream Irish Coffee Milkshake Shooters, White Russian Milkshakes",
+         "price": 10,
+         "total":1
+       },
+        {
+        "id": 7,
+        "name":"Dark Coffee",
+         "img": "imges/drink3.jpg",
+         "description": "Coffee Ice Cream Irish Coffee Milkshake Shooters, dark Russian Milkshakes",
+         "price": 25,
+         "total":1
+      },
+       {
+         "id": 8,
+         "name":"ice-cream with strawberry",
+         "img": "imges/drink4.jpg",
+         "description": "ice-cream with strawberry flavored with melted chocolate, cocoa powder",
+         "price": 18,
+         "total":1
+       } 
+]

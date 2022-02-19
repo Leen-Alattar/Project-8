@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 
 const CartDish = ({ cart, setCart, dish }) => {
-console.log(dish.id);
-  const [count, setCount] = useState(1);
-  const [total, setTotal] = useState(dish.price);
+  const [count, setCount] = useState(dish.total);
+  const [total, setTotal] = useState(dish.price * dish.total);
 
   let incrementCount = () => {
     setCount(count + 1);
@@ -26,21 +25,24 @@ console.log(dish.id);
   useEffect(() => {
     setTotal(count * dish.price);
     updateTotal();
-    sessionStorage.setItem("cart", JSON.stringify(cart));
+    //
   }, [count]);
 
-  const updateTotal =()=>{
+  const updateTotal = () => {
     let updateCart = JSON.parse(sessionStorage.getItem("cart"));
-    updateCart.map((el) =>  el.id == dish.id ? { ghosoun: "يا رب يزبط" }: "يا رب يزبط" 
+    updateCart = updateCart.map((el) => el.id == dish.id ?  {...el,total:count}: el
     );
-    setCart(updateCart);
-  }
+    sessionStorage.setItem("cart", JSON.stringify(updateCart));
+  };
   return (
     <tr>
-      <td>Jill</td>
-      <td>Smith</td>
-      <td> {dish.price} JD</td>
-      <td className="quantity-td">
+      <td  data-label="Dish">
+        <img width="100px" src={dish.img} alt="" />
+      </td>
+      <td data-label="Dish Name" >{dish.name}</td>
+      <td data-label="Price" > {dish.price} JD</td>
+      <td data-label="Quantity" className="quantity-td">
+        <div>
         <button className="btn-minus" type="button" onClick={decrementCount}>
           &#9866;
         </button>
@@ -57,14 +59,15 @@ console.log(dish.id);
 
         <button className="btn-plus" type="button" onClick={incrementCount}>
           &#10011;
-        </button>
+        </button></div>
       </td>
-      <td>{total} JD</td>
-      <td>
+      <td data-label="Price">{total} JD</td>
+      <td data-label="Delete Dish">
         <button className="delete-btn" onClick={deleteHandle}>
           &#10008;
         </button>
       </td>
+      
     </tr>
   );
 };

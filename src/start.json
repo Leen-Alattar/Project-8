@@ -1,0 +1,37 @@
+[
+
+    {
+        "id": 9,
+        "name":"A fiery antipasto",
+         "img": "imges/antipasto-garlic.jpeg",
+         "description": "A fiery antipasto featuring red-hot jalapeño peppers and crunchy cloves of pickled garlic in tangy marinade.",
+         "price": 10,
+         "total": 1
+       },
+       {
+         "id": 10,
+         "name":"Bruschetta",
+         "img": "imges/bruschetta.jpeg",
+       "description": "Italy consisting of grilled bread rubbed with garlic and topped with olive oil and salt.",
+        "price": 5 ,
+        "total": 1
+      },
+            {
+         "id": 11,
+         "name":"Indian deep fried",
+         "img": "imges/pappadum-stacks.jpeg",
+         "description": "A papadam or appalam is an Indian deep fried dough of black gram bean flour",
+         "price": 8 ,
+         "total": 1
+     },
+      {
+         "id": 12,
+         "name":"Japanese cuisine",
+         "img": "imges/sushi.jpeg",
+         "description": "a staple rice dish of Japanese cuisine, consisting of cooked rice flavoured with vinegar and a variety of vegetable",
+         "price": 18 ,
+         "total": 1
+       }  
+   
+     
+]
