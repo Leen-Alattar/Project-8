@@ -262,8 +262,8 @@ function Booking() {
         if (table.isAvailable) {
           tables.push(
             <Table
-              key={table._id}
-              id={table._id}
+              key={table.id}
+              id={table.id}
               chairs={table.capacity}
               name={table.name}
               empty
@@ -273,8 +273,8 @@ function Booking() {
         } else {
           tables.push(
             <Table
-              key={table._id}
-              id={table._id}
+              key={table.id}
+              id={table.id}
               chairs={table.capacity}
               name={table.name}
               selectTable={selectTable}
