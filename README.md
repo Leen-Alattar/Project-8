@@ -32,11 +32,17 @@ Customers also want a more convenient dining experience, and restaurants want to
 
 ## Installation
 
-Download Xampp on your computer to view this project.
+```shell
+# install node packages.
+$ npm install
+
+# start project.
+$ npm start
+```
 
 ## References
 
-1. React Documentation: www.php.net/docs.php.
+1. React Documentation: https://reactjs.org/docs/.
 2. Udemy React online course.
 
 ## Wireframe
