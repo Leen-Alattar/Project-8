@@ -1,0 +1,92 @@
+[
+  {
+    "name": "Table 1",
+    "capacity": 6,
+    "isAvailable": true,
+    "location": "Outside"
+  },
+  {
+    "name": "Table 2",
+    "capacity": 5,
+    "isAvailable": true,
+    "location": "Outside"
+  },
+  {
+    "name": "Table 3",
+    "capacity": 4,
+    "isAvailable": true,
+    "location": "Inside"
+  },
+  {
+    "name": "Table 4",
+    "capacity": 5,
+    "isAvailable": true,
+    "location": "Inside"
+  },
+  {
+    "name": "Table 5",
+    "capacity": 5,
+    "isAvailable": true,
+    "location": "Outside"
+  },
+  {
+    "name": "Table 6",
+    "capacity": 6,
+    "isAvailable": true,
+    "location": "Inside"
+  },
+  {
+    "name": "Table 7",
+    "capacity": 5,
+    "isAvailable": true,
+    "location": "Garden"
+  },
+  {
+    "name": "Table 8",
+    "capacity": 3,
+    "isAvailable": true,
+    "location": "Outside"
+  },
+  {
+    "name": "Table 9",
+    "capacity": 4,
+    "isAvailable": true,
+    "location": "Inside"
+  },
+  {
+    "name": "Table 10",
+    "capacity": 7,
+    "isAvailable": true,
+    "location": "Garden"
+  },
+  {
+    "name": "Table 11",
+    "capacity": 6,
+    "isAvailable": true,
+    "location": "Garden"
+  },
+  {
+    "name": "Table 12",
+    "capacity": 7,
+    "isAvailable": true,
+    "location": "Inside"
+  },
+  {
+    "name": "Table 13",
+    "capacity": 6,
+    "isAvailable": true,
+    "location": "Inside"
+  },
+  {
+    "name": "Table 14",
+    "capacity": 3,
+    "isAvailable": true,
+    "location": "Garden"
+  },
+  {
+    "name": "Table 15",
+    "capacity": 6,
+    "isAvailable": true,
+    "location": "Inside"
+  }
+]

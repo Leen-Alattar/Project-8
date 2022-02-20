@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Cart from "./components/cart/Cart";
 import { Routes, Route } from "react-router-dom";
 import Booking from "./components/Booking/Booking";
@@ -15,7 +15,8 @@ import ThankYou from "./components/ThankYou/ThankYou";
 import About from "./components/about/about";
 import Landing from "./components/Landing/Landing";
 import Footer from "./components/Footer/Footer";
-import {Land} from "./components/Land/land";
+import { Land } from "./components/Land/land";
+import data from "./allTables.json";
 
 import "./index.css";
 
@@ -24,6 +25,16 @@ const App = () => {
   const [emptyCart, setEmptyCart] = useState(false);
   const [item, setItem] = useState(Data);
   const [LoggedIn, setLoggedIn] = useState(false);
+
+  useEffect(() => {
+    localStorage.setItem(
+      "booking",
+      JSON.stringify({
+        date: "2022-02-20T09:00:00.000Z",
+        tables: data,
+      })
+    );
+  }, []);
 
   return (
     <>

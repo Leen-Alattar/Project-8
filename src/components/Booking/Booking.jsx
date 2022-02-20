@@ -3,7 +3,7 @@ import Table from "./Table";
 import { useNavigate } from "react-router-dom";
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/solid";
-
+import data from "../../allTables.json";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -83,30 +83,33 @@ function Booking() {
   useEffect(() => {
     // Check availability of tables from DB when a date and time is selected
     if (selection.time && selection.date) {
-      (async (_) => {
-        let datetime = getDate();
-        let res = await fetch("http://localhost:3001/availability", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "*",
-          },
-          body: JSON.stringify({
-            date: datetime,
-          }),
-        });
-        res = await res.json();
-        // Filter available tables with location and group size criteria
-        let tables = res.tables.filter(
-          (table) =>
-            (selection.size > 0 ? table.capacity >= selection.size : true) &&
-            (selection.location !== "Any Location"
-              ? table.location === selection.location
-              : true)
-        );
-        setTotalTables(tables);
-        console.log(tables);
-      })();
+      let datetime = getDate();
+      let bookingStored = JSON.parse(localStorage.getItem("booking"));
+      if (bookingStored) {
+        if (bookingStored.date === datetime) {
+          setTotalTables(bookingStored.tables);
+        } else {
+          setTotalTables(data);
+          localStorage.setItem(
+            "booking",
+            JSON.stringify({
+              date: datetime,
+              tables: data,
+            })
+          );
+        }
+      }
+      let res = JSON.parse(localStorage.getItem("booking"));
+      // Filter available tables with location and group size criteria
+      let tables = res.tables.filter(
+        (table) =>
+          (selection.size > 0 ? table.capacity >= selection.size : true) &&
+          (selection.location !== "Any Location"
+            ? table.location === selection.location
+            : true)
+      );
+      setTotalTables(tables);
+      console.log(tables);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selection.time, selection.date, selection.size, selection.location]);
