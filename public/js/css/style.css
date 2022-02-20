@@ -515,6 +515,38 @@ html, body{ height: 100%; }
   will-change: transform;
 }
 
+@-webkit-keyframes scrollWheel {
+  from {
+    -webkit-transform: translate(-50%, 0);
+    -webkit-transform: translate3d(-50%, 0, 0);
+    transform: translate(-50%, 0);
+    transform: translate3d(-50%, 0, 0);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: translate(-50%, 20px);
+    -webkit-transform: translate3d(-50%, 20px, 0);
+    transform: translate(-50%, 20px);
+    transform: translate3d(-50%, 20px, 0);
+    opacity: 0;
+  }
+  @media (min-width: 768px) {
+    from {
+      -webkit-transform: translate(-50%, 0);
+      -webkit-transform: translate3d(-50%, 0, 0);
+      transform: translate(-50%, 0);
+      transform: translate3d(-50%, 0, 0);
+      opacity: 1;
+    }
+    to {
+      -webkit-transform: translate(-50%, 40px);
+      -webkit-transform: translate3d(-50%, 40px, 0);
+      transform: translate(-50%, 40px);
+      transform: translate3d(-50%, 40px, 0);
+      opacity: 0;
+    }
+  }
+}
 
 @keyframes scrollWheel {
   from {
@@ -531,7 +563,22 @@ html, body{ height: 100%; }
     transform: translate3d(-50%, 20px, 0);
     opacity: 0;
   }
- 
+  @media (min-width: 768px) {
+    from {
+      -webkit-transform: translate(-50%, 0);
+      -webkit-transform: translate3d(-50%, 0, 0);
+      transform: translate(-50%, 0);
+      transform: translate3d(-50%, 0, 0);
+      opacity: 1;
+    }
+    to {
+      -webkit-transform: translate(-50%, 40px);
+      -webkit-transform: translate3d(-50%, 40px, 0);
+      transform: translate(-50%, 40px);
+      transform: translate3d(-50%, 40px, 0);
+      opacity: 0;
+    }
+  }
 }
 	
 /*------------------------------------------------------------------
@@ -669,7 +716,7 @@ html, body{ height: 100%; }
     z-index: 10;
     color: #ffffff;
     display: table-cell;
-    vertical-align: left;
+    vertical-align: middle;
     position: absolute;
     z-index: 5;
     -webkit-transform: scale(0,0);
@@ -719,7 +766,7 @@ html, body{ height: 100%; }
 	position:absolute;
 	height:100%;
 	width:100%;
-	background:rgba(19, 18, 17, 0.5);
+	background:rgba(231, 91, 30, 0.5);
 	top:0px;
 	left:0px;
 }

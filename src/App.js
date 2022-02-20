@@ -26,9 +26,9 @@ const App=()=> {
         <Route path="booking" element={<Booking />}></Route>
         <Route path="*" element={<Error />}></Route>
       </Routes>
-
+<Land/>
 {/* filter  */}
-      <div className="container3">
+      {/* <div className="container3">
         <div className="row3">
           <h1 className="col-12 text-center my-3 fw-bold head">Our Menu</h1>
           <Buttons
@@ -38,7 +38,7 @@ const App=()=> {
           />
           <Card item={item} />
         </div>
-      </div>
+      </div> */}
     </>
   );
 }
