@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import './login.css';
 
 
 const Login = ({ LoggedIn, setLoggedIn }) => {
   const [errors, setErrors] = useState([]);
+  let navigate = useNavigate();
   const [user, setUser] = useState({
     name: "",
     email: "",
@@ -50,21 +51,19 @@ const Login = ({ LoggedIn, setLoggedIn }) => {
         errors["email"] = "You have to register first :) ";
         isValid = false;
       } else if (u[0].password !== user.password) {
-        console.log(u[0].password);
-        console.log(user.password);
+
         errors["password"] = "Wrong password  :( ";
         isValid = false;
       } else {
         setErrors([]);
         sessionStorage.setItem("currentUser", JSON.stringify(u));
-
-        console.log(JSON.parse(sessionStorage.getItem("currentUser")));
         setLoggedIn(true);
         setUser({
           name: "",
           email: "",
           password: "",
         });
+       navigate(-1);
       }
     }
     setErrors(errors);
@@ -72,7 +71,6 @@ const Login = ({ LoggedIn, setLoggedIn }) => {
 
   return (
     <React.Fragment>
-      {LoggedIn ? <Navigate to="/post" replace={true} /> : ""}
       <form className="ui form" onSubmit={submitHandler}>
         <div className="field">
           <label>E-mail</label>
@@ -80,11 +78,8 @@ const Login = ({ LoggedIn, setLoggedIn }) => {
             type="email"
             name="email"
             value={user.email}
-            onChange={setValue}
-          />
-          <div className={errors.email === undefined ? "" : "ui red message"}>
-            {errors.email}
-          </div>
+            onChange={setValue}/>
+          <small>{errors.email}</small>
         </div>
         <div className="field">
           <label>Password</label>
@@ -95,11 +90,7 @@ const Login = ({ LoggedIn, setLoggedIn }) => {
             onChange={setValue}
             autoComplete="on"
           />
-          <div
-            className={errors.password === undefined ? "" : "ui red message"}
-          >
-            {errors.password}
-          </div>
+          <small>{errors.password}</small>
         </div>
         <button className="ui button" type="submit">
           Login

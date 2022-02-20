@@ -1,16 +1,24 @@
 import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-export const Header = ({ setEmptyCart, emptyCart }) => {
+export const Header = ({ LoggedIn, setLoggedIn }) => {
   let navigate = useNavigate();
-  
-  const u = ()=>{ if (sessionStorage.getItem("cart") === null) {
-    navigate("/empty");
-  } else if (JSON.parse(sessionStorage.getItem("cart")).length === 0) {
-    navigate("/empty");
-  }else{  navigate("/cart");} }
- 
 
+  const u = () => {
+    if (sessionStorage.getItem("cart") === null) {
+      navigate("/empty");
+    } else if (JSON.parse(sessionStorage.getItem("cart")).length === 0) {
+      navigate("/empty");
+    } else {
+      navigate("/cart");
+    }
+  };
+
+  const logoutHandler = () => {
+    setLoggedIn(false);
+    sessionStorage.clear();
+    navigate(-1);
+  };
   return (
     <div>
       <div id="site-header">
@@ -53,19 +61,27 @@ export const Header = ({ setEmptyCart, emptyCart }) => {
                       <li>
                         <Link to="booking">Reservation</Link>
                       </li>
-            
                       <li>
                         <Link to="about">About us</Link>
                       </li>
                       <li>
-                        <Link to="login">Login</Link>
+                        {LoggedIn === true ? (
+                          <a onClick={logoutHandler}>Logout</a>
+                        ) : (
+                          <Link to="login">Login</Link>
+                        )}
                       </li>
-                      <li>
-                        <Link to="register">Register</Link>
-                      </li>
+                      {LoggedIn === true ? (
+                        ""
+                      ) : (
+                        <li>
+                          <Link to="register">Register</Link>
+                        </li>
+                      )}
                       <li>
                         <a>
-                          <i onClick={u}
+                          <i
+                            onClick={u}
                             className="fa fa-shopping-basket"
                             aria-hidden="true"
                           ></i>

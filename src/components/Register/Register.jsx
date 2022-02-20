@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import "./register.css";
 
 const Register = ({ LoggedIn, setLoggedIn }) => {
   const [errors, setErrors] = useState([]);
@@ -8,9 +9,8 @@ const Register = ({ LoggedIn, setLoggedIn }) => {
     email: "",
     password: "",
   });
-
+  let navigate = useNavigate();
   const setValue = (e) => {
-    //   localStorage.clear();
     setErrors([]);
     const name = e.target.name;
     setUser({
@@ -79,15 +79,15 @@ const Register = ({ LoggedIn, setLoggedIn }) => {
         password: "",
       });
       setLoggedIn(true);
+      navigate(-1);
     }
   };
 
   return (
     <React.Fragment>
-      {LoggedIn ? <Navigate to="/post" replace={true} /> : ""}
       <form className="ui form" onSubmit={submitHandler}>
         <div className="field">
-          <label>Full Name</label>
+          <label>User Name</label>
           <input
             type="text"
             name="name"
@@ -104,6 +104,7 @@ const Register = ({ LoggedIn, setLoggedIn }) => {
             value={user.email}
             onChange={setValue}
           />
+
           <small>{errors.email}</small>
         </div>
         <div className="field">
