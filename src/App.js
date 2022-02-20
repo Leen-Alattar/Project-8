@@ -16,6 +16,7 @@ import About from "./components/about/about";
 import Landing from "./components/Landing/Landing";
 import Footer from "./components/Footer/Footer";
 
+
 const App = () => {
   const [cart, setCart] = useState([]);
   const [emptyCart, setEmptyCart] = useState(false);
