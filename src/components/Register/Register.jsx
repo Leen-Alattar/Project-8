@@ -87,7 +87,7 @@ const Register = ({ LoggedIn, setLoggedIn }) => {
     <React.Fragment>
       <div className="containerr">
       <h1 id="heading1">Register</h1>
-      <img src="https://cdn-icons.flaticon.com/png/512/3711/premium/3711310.png?token=exp=1645363063~hmac=9df8eea5c84c37bca7b54cbaadb2d8f0" alt="Login Logo" class ="imgLogin" />
+      <img className="login-image" src="https://cdn-icons.flaticon.com/png/512/3711/premium/3711310.png?token=exp=1645363063~hmac=9df8eea5c84c37bca7b54cbaadb2d8f0" alt="Login Logo" class ="imgLogin" />
 
         <div class="formcontainer">
       <form className="myForm" onSubmit={submitHandler}>

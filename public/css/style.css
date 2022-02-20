@@ -1504,7 +1504,7 @@ textarea:focus, input:focus, select:focus, .bootstrap-select .dropdown-toggle:fo
     FOOTER AREA
 -------------------------------------------------------------------*/
 
-.footer-main{margin-top: 50px;}
+.footer-main{}
 .footer-news{
 	background:url(../images/newsletter-bg.jpg) no-repeat center;
 	background-attachment:fixed;
