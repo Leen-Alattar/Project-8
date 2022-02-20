@@ -4,9 +4,9 @@ function Error() {
   return (
     <div>
       <img
-        style={{ width: "100%", objectFit: "object-cover" }}
         src="https://symbanservices.com/wp-content/uploads/2017/10/404-error-donut.png"
         alt="error404"
+        className="w-screen object-cover"
       />
     </div>
   );
