@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Cart from "./components/cart/Cart";
 import { Routes, Route } from "react-router-dom";
 import Booking from "./components/Booking/Booking";
-import Registration from "./components/registration/registration";
+import Register from "./components/Register/Register";
 import Login from "./components/login/login";
 import Error from "./components/Error404/Error";
 import Card from "./Card.js";
@@ -29,7 +29,7 @@ const App = () => {
         <Route path="/" element={<Landing />}></Route>
         <Route path="booking" element={<Booking />}></Route>
         <Route path="/success" element={<ThankYou />}></Route>
-        <Route path="register" element={<Registration />}></Route>
+        <Route path="register" element={<Register />}></Route>
         <Route path="login" element={<Login />}></Route>
         <Route path="*" element={<Error />}></Route>
         <Route path="about" element={<About />}></Route>

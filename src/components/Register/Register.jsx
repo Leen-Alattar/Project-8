@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { Navigate } from "react-router-dom";
-import './login.css';
 
-
-const Login = ({ LoggedIn, setLoggedIn }) => {
+const Register = ({ LoggedIn, setLoggedIn }) => {
   const [errors, setErrors] = useState([]);
   const [user, setUser] = useState({
     name: "",
@@ -12,6 +10,7 @@ const Login = ({ LoggedIn, setLoggedIn }) => {
   });
 
   const setValue = (e) => {
+    //   localStorage.clear();
     setErrors([]);
     const name = e.target.name;
     setUser({
@@ -21,7 +20,6 @@ const Login = ({ LoggedIn, setLoggedIn }) => {
   };
 
   const submitHandler = (e) => {
-    //sessionStorage.clear();
     e.preventDefault();
     let isValid = true;
     let errors = {};
@@ -29,9 +27,10 @@ const Login = ({ LoggedIn, setLoggedIn }) => {
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     let passRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
 
-    if (user.password === "") {
-      errors["password"] = "This field is required!";
+    //User Name Validation
+    if (user.name === "") {
       isValid = false;
+      errors["name"] = "This field is required!";
     }
 
     //Email Validation
@@ -41,39 +40,62 @@ const Login = ({ LoggedIn, setLoggedIn }) => {
     } else if (!emailRegex.test(user.email)) {
       errors["email"] = "It is not valid email";
       isValid = false;
-    } else if (JSON.parse(localStorage.getItem("users")) !== null) {
+    }
+
+    if (JSON.parse(localStorage.getItem("users")) !== null) {
       var users = JSON.parse(localStorage.getItem("users"));
-      var u = users.filter((u) => {
+      let u = users.filter((u) => {
         if (u.email === user.email) return true;
       });
-      if (u.length === 0) {
-        errors["email"] = "You have to register first :) ";
+      if (u.length === 1) {
+        errors["email"] = "This email is already token!";
         isValid = false;
-      } else if (u[0].password !== user.password) {
-        console.log(u[0].password);
-        console.log(user.password);
-        errors["password"] = "Wrong password  :( ";
-        isValid = false;
-      } else {
-        setErrors([]);
-        sessionStorage.setItem("currentUser", JSON.stringify(u));
-
-        console.log(JSON.parse(sessionStorage.getItem("currentUser")));
-        setLoggedIn(true);
-        setUser({
-          name: "",
-          email: "",
-          password: "",
-        });
       }
     }
+
+    //password Validation
+    if (user.password === "") {
+      errors["password"] = "This field is required!";
+      isValid = false;
+    } else if (!passRegex.test(user.password)) {
+      errors["password"] = "It should be more than 8 character";
+      isValid = false;
+    }
     setErrors(errors);
+
+    if (isValid) {
+      if (JSON.parse(localStorage.getItem("users")) === null) {
+        localStorage.setItem("users", JSON.stringify([user]));
+      } else {
+        let users = JSON.parse(localStorage.getItem("users"));
+        let newUsers = [...users, user];
+        localStorage.setItem("users", JSON.stringify(newUsers));
+      }
+      sessionStorage.setItem("currentUser", JSON.stringify(user));
+
+      setUser({
+        name: "",
+        email: "",
+        password: "",
+      });
+      setLoggedIn(true);
+    }
   };
 
   return (
     <React.Fragment>
       {LoggedIn ? <Navigate to="/post" replace={true} /> : ""}
       <form className="ui form" onSubmit={submitHandler}>
+        <div className="field">
+          <label>Full Name</label>
+          <input
+            type="text"
+            name="name"
+            value={user.name}
+            onChange={setValue}
+          />
+          <small> {errors.name} </small>
+        </div>
         <div className="field">
           <label>E-mail</label>
           <input
@@ -82,9 +104,7 @@ const Login = ({ LoggedIn, setLoggedIn }) => {
             value={user.email}
             onChange={setValue}
           />
-          <div className={errors.email === undefined ? "" : "ui red message"}>
-            {errors.email}
-          </div>
+          <small>{errors.email}</small>
         </div>
         <div className="field">
           <label>Password</label>
@@ -95,17 +115,13 @@ const Login = ({ LoggedIn, setLoggedIn }) => {
             onChange={setValue}
             autoComplete="on"
           />
-          <div
-            className={errors.password === undefined ? "" : "ui red message"}
-          >
-            {errors.password}
-          </div>
+          <small>{errors.password}</small>
         </div>
         <button className="ui button" type="submit">
-          Login
+          Register
         </button>
       </form>
     </React.Fragment>
   );
 };
-export default Login;
+export default Register;
