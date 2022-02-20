@@ -75,7 +75,7 @@ const Login = ({ LoggedIn, setLoggedIn }) => {
     
       
       <h1 id="heading1">Login Here</h1>
-      <img src="https://cdn-icons.flaticon.com/png/512/3711/premium/3711310.png?token=exp=1645363063~hmac=9df8eea5c84c37bca7b54cbaadb2d8f0" alt="Login Logo" class ="imgLogin" />
+      <img className="login-image" src="https://cdn-icons.flaticon.com/png/512/3711/premium/3711310.png?token=exp=1645363063~hmac=9df8eea5c84c37bca7b54cbaadb2d8f0" alt="Login Logo" class ="imgLogin" />
       <div>&#160;</div>
       <div>&#160;</div>
       <div class= "loginContainer">
