@@ -27,13 +27,15 @@ const App = () => {
   const [LoggedIn, setLoggedIn] = useState(false);
 
   useEffect(() => {
-    localStorage.setItem(
-      "booking",
-      JSON.stringify({
-        date: "2022-02-20T09:00:00.000Z",
-        tables: data,
-      })
-    );
+    if (!localStorage.getItem("booking")) {
+      localStorage.setItem(
+        "booking",
+        JSON.stringify({
+          date: "2022-02-20T09:00:00.000Z",
+          tables: data,
+        })
+      );
+    }
   }, []);
 
   return (

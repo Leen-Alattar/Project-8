@@ -127,12 +127,14 @@ function Booking() {
     } else {
       const datetime = getDate();
       let res = JSON.parse(localStorage.getItem("booking"));
+      let cart = JSON.parse(sessionStorage.getItem("cart"));
       res.tables.forEach((table) => {
         if (table.id == selection.table.id) {
           // The correct table is table
           table.isAvailable = false;
           table.reservation = {
             ...booking,
+            cart: { ...cart },
           };
           // console.log(table);
           console.log(res);
