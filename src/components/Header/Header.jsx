@@ -1,12 +1,18 @@
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-export const Header = () => {
+export const Header = ({ setEmptyCart, emptyCart }) => {
+  let navigate = useNavigate();
+  
+  const u = ()=>{ if (sessionStorage.getItem("cart") === null) {
+    navigate("/empty");
+  } else if (JSON.parse(sessionStorage.getItem("cart")).length === 0) {
+    navigate("/empty");
+  }else{  navigate("/cart");} }
+ 
+
   return (
     <div>
-      {/* <div id="loader">
-            <div id="status"></div>
-        </div> */}
       <div id="site-header">
         <header id="header" className="header-block-top">
           <div className="container">
@@ -38,22 +44,20 @@ export const Header = () => {
                   </div>
                   <div id="navbar" className="navbar-collapse collapse">
                     <ul className="nav navbar-nav navbar-right">
-                      <li className="active">
-                        <a href="#banner">Home</a>
+                      <li>
+                        <Link to="/">Home</Link>
                       </li>
-
                       <li>
                         <Link to="menu">Menu</Link>
                       </li>
-
                       <li>
-                        <a href="#reservation">Reservaion</a>
+                        <Link to="booking">Reservation</Link>
                       </li>
                       <li>
-                        <a href="#footer">Contact us</a>
+                        <Link to="contact">Contact us</Link>
                       </li>
                       <li>
-                        <a href="#about">About us</a>
+                        <Link to="about">About us</Link>
                       </li>
                       <li>
                         <Link to="login">Login</Link>
@@ -61,14 +65,13 @@ export const Header = () => {
                       <li>
                         <Link to="register">Register</Link>
                       </li>
-
                       <li>
-                        <Link to="cart">
-                          <i
+                        <a>
+                          <i onClick={u}
                             className="fa fa-shopping-basket"
                             aria-hidden="true"
                           ></i>
-                        </Link>
+                        </a>
                       </li>
                     </ul>
                   </div>

@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const CartDish = ({ cart, setCart, dish, setTotalCart, totalCart }) => {
   const [count, setCount] = useState(dish.total);
   const [total, setTotal] = useState(dish.price * dish.total);
+  
   var countTotal = 0;
+  let navigate = useNavigate();
+
   let incrementCount = () => {
     setCount(count + 1);
   };
@@ -16,11 +20,21 @@ const CartDish = ({ cart, setCart, dish, setTotalCart, totalCart }) => {
   const deleteHandle = () => {
     let sessionCart = JSON.parse(sessionStorage.getItem("cart"));
     let remainder = sessionCart.filter((d) => {
-      if (d.id !== dish.id) return d;
+      if (d.id !== dish.id) {
+        return d;
+      } else {
+        setTotalCart(totalCart - d.total * d.price);
+      }
     });
+    console.log(remainder);
+    if (remainder.length === 0) {
+      navigate("/empty");
+    }
     sessionStorage.setItem("cart", JSON.stringify(remainder));
     setCart(remainder);
   };
+
+  //get the total cart
   useEffect(() => {
     let updateCart = JSON.parse(sessionStorage.getItem("cart"));
     let sum = updateCart.reduce(
@@ -28,8 +42,9 @@ const CartDish = ({ cart, setCart, dish, setTotalCart, totalCart }) => {
       0
     );
     setTotalCart(sum);
+  }, [cart]);
 
-  }, []);
+  //update single cart's item  total
   useEffect(() => {
     setTotal(count * dish.price);
     updateTotal();
@@ -47,8 +62,8 @@ const CartDish = ({ cart, setCart, dish, setTotalCart, totalCart }) => {
       0
     );
     setTotalCart(sum);
-
   };
+
   return (
     <tr>
       <td data-label="Dish">

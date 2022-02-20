@@ -40,9 +40,7 @@ const Cart = ({ cart, setCart, setEmptyCart, emptyCart }) => {
                 dish={dish}
                 dishId={dish.id}
                 totalCart={totalCart}
-                setTotalCart={setTotalCart}
-              />
-            ))}
+                setTotalCart={setTotalCart} /> ))}
           </tbody>
         </table>
         <div className="check-out">
@@ -55,12 +53,12 @@ const Cart = ({ cart, setCart, setEmptyCart, emptyCart }) => {
             <div>
               <input type="radio" id="book" name="book" value="book" 
               checked={radio === "book"} onChange={(e)=>setRadio(e.target.value)} />
-              <label for="book">BooK Table</label>
+              <label htmlFor="book">BooK Table</label>
             </div>
             <div>
               <input type="radio" id="take" name="book" value="take" 
               checked={radio === "take"} onChange={(e)=>setRadio(e.target.value)} />
-              <label for="take">Take Away</label>
+              <label htmlFor="take">Take Away</label>
             </div>
           </div>
           {radio === 'take'  ?<button> Book Now </button> : <button > Book table </button>}

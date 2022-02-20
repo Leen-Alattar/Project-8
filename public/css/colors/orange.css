@@ -1,12 +1,10 @@
-.navbar-default .navbar-toggle .icon-bar{
+/* .navbar-default .navbar-toggle .icon-bar{
 	background-color: #e75b1e;
-}
-.main-menu .navbar-default .navbar-nav .active a{
-	color: #e75b1e;
-}
-.main-menu nav li a::after {
+} */
+
+/* .main-menu nav li a::after {
     background: #e75b1e;
-}
+} */
 .typer{
 	color: #e75b1e !important;
 }

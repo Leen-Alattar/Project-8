@@ -1,33 +1,39 @@
 import React, { useState } from "react";
-import Cart from "./components/cart/Cart";
+import Cart from "./components/Cart/Cart";
 import { Routes, Route } from "react-router-dom";
 import Booking from "./components/Booking/Booking";
 import Registration from "./components/registration/registration";
 import Login from "./components/login/login";
 import Error from "./components/Error404/Error";
-
 import Card from "./Card.js";
 import Data from "./Data";
 import Buttons from "./Buttons";
 import { Header } from "./components/Header/Header.jsx";
-import Empty from "./components/cart/Empty";
-import Filter from "./components/filter/Filter";
+import Empty from "./components/Empty Cart/Empty";
+import Filter from "./components/Filter/Filter";
 import ThankYou from "./components/ThankYou/ThankYou";
+import About from "./components/about/about";
+import Contact from "./components/Contact/contact";
+import Landing from "./components/Landing/Landing";
 
 const App = () => {
   const [cart, setCart] = useState([]);
-  const [emptyCart, setEmptyCart] = useState(true);
+  const [emptyCart, setEmptyCart] = useState(false);
   const [item, setItem] = useState(Data);
 
   return (
     <>
-      <Header />
+      <Header emptyCart={emptyCart} setEmptyCart={setEmptyCart} />
       <Routes>
+        
+        <Route path="/" element={<Landing />}></Route>
         <Route path="booking" element={<Booking />}></Route>
         <Route path="/success" element={<ThankYou />}></Route>
         <Route path="register" element={<Registration />}></Route>
         <Route path="login" element={<Login />}></Route>
         <Route path="*" element={<Error />}></Route>
+        <Route path="about" element={<About />}></Route>
+        <Route path="contact" element={<Contact />}></Route>
         <Route
           path="cart"
           element={

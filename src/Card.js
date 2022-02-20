@@ -27,7 +27,6 @@ const Card = ({ item ,setItem ,cart, setCart }) => {
 
   return (
     <>
-
       <div className="container2 ">
         <div className="menu">
           <h2 className="menu-group-heading"></h2>
