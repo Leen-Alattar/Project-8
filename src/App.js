@@ -15,6 +15,8 @@ import ThankYou from "./components/ThankYou/ThankYou";
 import About from "./components/about/about";
 import Landing from "./components/Landing/Landing";
 import Footer from "./components/Footer/Footer";
+import {Land} from "./components/Land/land";
+
 import "./index.css";
 
 const App = () => {
@@ -32,7 +34,7 @@ const App = () => {
         setLoggedIn={setLoggedIn}
       />
       <Routes>
-        <Route path="/" element={<Landing />}></Route>
+        <Route path="/" element={<Land />}></Route>
         <Route path="booking" element={<Booking />}></Route>
         <Route path="/success" element={<ThankYou />}></Route>
         <Route
