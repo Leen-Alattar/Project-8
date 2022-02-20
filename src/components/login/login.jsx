@@ -84,6 +84,7 @@ const Login = ({ LoggedIn, setLoggedIn }) => {
         <i class="fa fa-envelope icon"></i>
           <input
           class="input-field"
+          placeholder="User Email"
             type="email"
             name="email"
             value={user.email}
@@ -94,6 +95,7 @@ const Login = ({ LoggedIn, setLoggedIn }) => {
         <i class="fa fa-key icon"></i>
           <input
           class="input-field"  
+          placeholder="User Password"
             type="password"
             name="password"
             value={user.password}

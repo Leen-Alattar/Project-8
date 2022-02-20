@@ -85,16 +85,17 @@ const Register = ({ LoggedIn, setLoggedIn }) => {
 
   return (
     <React.Fragment>
+      <div className="containerr">
       <h1 id="heading1">Register</h1>
       <img src="https://cdn-icons.flaticon.com/png/512/3711/premium/3711310.png?token=exp=1645363063~hmac=9df8eea5c84c37bca7b54cbaadb2d8f0" alt="Login Logo" class ="imgLogin" />
 
         <div class="formcontainer">
       <form className="myForm" onSubmit={submitHandler}>
         <div className="input-container">
-        <i class="fa-regular fa-user"></i>
+        <i class="fa-regular fa-user  icon "></i>
           <input
            class="input-field"
-           pattern="User Name"
+           placeholder="User Name"
             type="text"
             name="name"
             value={user.name}
@@ -106,7 +107,7 @@ const Register = ({ LoggedIn, setLoggedIn }) => {
         <i class="fa fa-envelope icon"></i>
           <input
            class="input-field"
-           pattern="User Email"
+           placeholder="User Email"
             type="email"
             name="email"
             value={user.email}
@@ -119,7 +120,7 @@ const Register = ({ LoggedIn, setLoggedIn }) => {
         <i class="fa fa-key icon"></i>
           <input
             class="input-field"
-            pattern="User Password"
+            placeholder="User Password"
             type="password"
             name="password"
             value={user.password}
@@ -132,6 +133,7 @@ const Register = ({ LoggedIn, setLoggedIn }) => {
           Register
         </button>
       </form>
+      </div>
       </div>
     </React.Fragment>
   );

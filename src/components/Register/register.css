@@ -1,7 +1,11 @@
+.containerr{
+  
+}
 .formcontainer{
-    padding-top: 12rem;
+    padding-top: 3rem;
     box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
+  
 }
 #heading1{
     text-align: center;
@@ -9,6 +13,7 @@
     color: #e75b1e;
     text-decoration: solid;
     padding-top: 10rem;
+    font-size:  30px;
 }
 img{
   display: block;
@@ -32,7 +37,7 @@ img{
   .icon {
     padding: 10px;
     background: #e75b1e;
-    color: white;
+    color: #e75b1e;
     min-width: 50px;
     text-align: center;
   }
@@ -48,8 +53,8 @@ img{
   }
 
   .bttn {
-    background-color:#e75b1e;
-    color: white;
+    background-color:#e75b1e!important;
+    color: #e75b1e;
     padding: 15px 20px;
     border: none;
     cursor: pointer;
