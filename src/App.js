@@ -6,6 +6,7 @@ import {Header} from './components/Header/Header.jsx'
 import Card from './Card.js'
 import Data from "./Data";
 import Buttons from "./Buttons";
+import {Land} from './components/Land/land'
 const App=()=> {
 
   const [item, setItem] = useState(Data);
