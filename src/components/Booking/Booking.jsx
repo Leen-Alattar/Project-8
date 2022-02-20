@@ -88,16 +88,17 @@ function Booking() {
       if (bookingStored) {
         if (bookingStored.date === datetime) {
           setTotalTables(bookingStored.tables);
-        } else {
-          setTotalTables(data);
-          localStorage.setItem(
-            "booking",
-            JSON.stringify({
-              date: datetime,
-              tables: data,
-            })
-          );
         }
+        // else {
+        //   setTotalTables(data);
+        //   localStorage.setItem(
+        //     "booking",
+        //     JSON.stringify({
+        //       date: datetime,
+        //       tables: data,
+        //     })
+        //   );
+        // }
       }
       let res = JSON.parse(localStorage.getItem("booking"));
       // Filter available tables with location and group size criteria
@@ -115,7 +116,7 @@ function Booking() {
   }, [selection.time, selection.date, selection.size, selection.location]);
 
   // Make the reservation if all details are filled out
-  const reserve = async () => {
+  const reserve = () => {
     if (
       (booking.name.length === 0) |
       (booking.phone.length === 0) |
@@ -125,19 +126,25 @@ function Booking() {
       setReservationError(true);
     } else {
       const datetime = getDate();
-      let res = await fetch("http://localhost:3001/reserve", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          ...booking,
-          date: datetime,
-          table: selection.table.id,
-        }),
+      let res = JSON.parse(localStorage.getItem("booking"));
+      res.tables.forEach((table) => {
+        if (table.id == selection.table.id) {
+          // The correct table is table
+          table.isAvailable = false;
+          table.reservation = {
+            ...booking,
+          };
+          // console.log(table);
+          console.log(res);
+          localStorage.setItem(
+            "booking",
+            JSON.stringify({
+              date: datetime,
+              tables: res.tables,
+            })
+          );
+        }
       });
-      res = await res.text();
-      console.log("Reserved: " + res);
       navigate("/success");
     }
   };
@@ -475,7 +482,6 @@ function Booking() {
                   placeholder="Name"
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-pink-500 focus:border-pink-500 block w-full p-2.5 dark:bg-white dark:border-gray-500 dark:placeholder-gray-400 dark:text-black dark:focus:ring-pink-500 dark:focus:border-pink-500"
                   value={booking.name}
-                  required
                   onChange={(e) => {
                     setBooking({
                       ...booking,
@@ -497,7 +503,6 @@ function Booking() {
                   placeholder="Phone Number"
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-pink-500 focus:border-pink-500 block w-full p-2.5 dark:bg-white dark:border-gray-500 dark:placeholder-gray-400 dark:text-black dark:focus:ring-pink-500 dark:focus:border-pink-500"
                   value={booking.phone}
-                  required
                   onChange={(e) => {
                     setBooking({
                       ...booking,
@@ -519,7 +524,6 @@ function Booking() {
                   placeholder="Email"
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-pink-500 focus:border-pink-500 block w-full p-2.5 dark:bg-white dark:border-gray-500 dark:placeholder-gray-400 dark:text-black dark:focus:ring-pink-500 dark:focus:border-pink-500"
                   value={booking.email}
-                  required
                   onChange={(e) => {
                     setBooking({
                       ...booking,
