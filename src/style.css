@@ -57,8 +57,9 @@
 .menu-item-heading a {
   display: flex;
   margin-left: 100px;
-  color: #e75b1e;
+  color: black;
   font-weight: bold;
+  cursor: pointer;
 }
 
 a :hover {

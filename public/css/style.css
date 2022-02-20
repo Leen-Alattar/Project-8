@@ -653,7 +653,7 @@ html, body{ height: 100%; }
 .item-type-zoom{
 	border:4px solid #fff;
 }
-.item-type-zoom .item-hover {
+/* .item-type-zoom .item-hover {
     z-index: 5;
     -webkit-transition: all 300ms ease-out;
     -moz-transition: all 300ms ease-out;
@@ -664,7 +664,7 @@ html, body{ height: 100%; }
     display: block;
     text-decoration: none;
     text-align: center;
-}
+} */
 
 .item-type-zoom .item-info {
     z-index: 10;

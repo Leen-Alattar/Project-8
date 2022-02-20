@@ -84,6 +84,7 @@ export const Header = ({ LoggedIn, setLoggedIn }) => {
                             onClick={u}
                             className="fa fa-shopping-basket"
                             aria-hidden="true"
+                            style={{ fontSize:"20px"}}
                           ></i>
                         </a>
                       </li>

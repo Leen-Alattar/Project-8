@@ -1,6 +1,7 @@
 
 .empty-Container {
     margin-top: 150px;
+    margin-bottom: 50px;
     width: 100%;
     display: grid;
     grid-template-areas: '. cartImage .''. notation .''. btn .';
@@ -25,6 +26,7 @@
     margin: auto;
 }
 .shop-btn {
+    width:100%;
     text-align: center;
     padding: 7px 15px;
     font-size: 1.5em;
@@ -39,4 +41,7 @@
 .shop-btn:hover {
     color: #fff;
     transform: translateY(-3px) scale(1.2);
+}
+@media(max-width: 1024px){
+    .empty-Container a{width:30%}
 }
