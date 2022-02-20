@@ -21,17 +21,18 @@ const App = () => {
   const [cart, setCart] = useState([]);
   const [emptyCart, setEmptyCart] = useState(false);
   const [item, setItem] = useState(Data);
+  const [LoggedIn, setLoggedIn] = useState(false);
 
   return (
     <>
-      <Header emptyCart={emptyCart} setEmptyCart={setEmptyCart} />
+      <Header emptyCart={emptyCart} setEmptyCart={setEmptyCart} LoggedIn={LoggedIn} setLoggedIn={setLoggedIn}/>
       <Routes>
         
         <Route path="/" element={<Landing />}></Route>
         <Route path="booking" element={<Booking />}></Route>
         <Route path="/success" element={<ThankYou />}></Route>
-        <Route path="register" element={<Register />}></Route>
-        <Route path="login" element={<Login />}></Route>
+        <Route path="register" element={<Register LoggedIn={LoggedIn} setLoggedIn={setLoggedIn} />}></Route>
+        <Route path="login" element={<Login  LoggedIn={LoggedIn} setLoggedIn={setLoggedIn} />}></Route>
         <Route path="*" element={<Error />}></Route>
         <Route path="about" element={<About />}></Route>
         <Route
@@ -57,6 +58,7 @@ const App = () => {
           }
         ></Route>
         <Route path="empty" element={<Empty />}></Route>
+        <Route path="/logout" element={<Landing />}></Route>
       </Routes>
       <Footer />
     </>

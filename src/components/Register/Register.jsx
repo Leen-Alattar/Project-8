@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import "./register.css";
 
 const Register = ({ LoggedIn, setLoggedIn }) => {
   const [errors, setErrors] = useState([]);
@@ -8,9 +9,8 @@ const Register = ({ LoggedIn, setLoggedIn }) => {
     email: "",
     password: "",
   });
-
+  let navigate = useNavigate();
   const setValue = (e) => {
-    //   localStorage.clear();
     setErrors([]);
     const name = e.target.name;
     setUser({
@@ -79,16 +79,22 @@ const Register = ({ LoggedIn, setLoggedIn }) => {
         password: "",
       });
       setLoggedIn(true);
+      navigate(-1);
     }
   };
 
   return (
     <React.Fragment>
-      {LoggedIn ? <Navigate to="/post" replace={true} /> : ""}
-      <form className="ui form" onSubmit={submitHandler}>
-        <div className="field">
-          <label>Full Name</label>
+      <h1 id="heading1">Register</h1>
+      <img src="https://cdn-icons.flaticon.com/png/512/3711/premium/3711310.png?token=exp=1645363063~hmac=9df8eea5c84c37bca7b54cbaadb2d8f0" alt="Login Logo" class ="imgLogin" />
+
+        <div class="formcontainer">
+      <form className="myForm" onSubmit={submitHandler}>
+        <div className="input-container">
+        <i class="fa-regular fa-user"></i>
           <input
+           class="input-field"
+           pattern="User Name"
             type="text"
             name="name"
             value={user.name}
@@ -96,19 +102,24 @@ const Register = ({ LoggedIn, setLoggedIn }) => {
           />
           <small> {errors.name} </small>
         </div>
-        <div className="field">
-          <label>E-mail</label>
+        <div className="input-container">
+        <i class="fa fa-envelope icon"></i>
           <input
+           class="input-field"
+           pattern="User Email"
             type="email"
             name="email"
             value={user.email}
             onChange={setValue}
           />
+
           <small>{errors.email}</small>
         </div>
-        <div className="field">
-          <label>Password</label>
+        <div className="input-container">
+        <i class="fa fa-key icon"></i>
           <input
+            class="input-field"
+            pattern="User Password"
             type="password"
             name="password"
             value={user.password}
@@ -117,10 +128,11 @@ const Register = ({ LoggedIn, setLoggedIn }) => {
           />
           <small>{errors.password}</small>
         </div>
-        <button className="ui button" type="submit">
+        <button className="bttn" type="submit">
           Register
         </button>
       </form>
+      </div>
     </React.Fragment>
   );
 };
