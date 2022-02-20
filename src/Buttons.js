@@ -8,7 +8,7 @@ const Buttons = ({ filterItem, setItem, menuItems }) => {
         {menuItems.map((Val, id) => {
           return (
             <button
-              className="btn-dark text-white p-5  mx-5 btn fw-bold b3"
+              className="bg-[#efefef] text-black rounded-xl px-5 py-2  mx-5 "
               onClick={() => filterItem(Val)}
               key={id}
             >
@@ -17,12 +17,11 @@ const Buttons = ({ filterItem, setItem, menuItems }) => {
           );
         })}
         <button
-          className="btn-dark text-white p-5 px-3 mx-5 fw-bold btn b3"
+          className="bg-[#efefef] text-black rounded-xl px-5 py-2  mx-5 "
           onClick={() => setItem(Data)}
         >
           All
         </button>
-
       </div>
     </>
   );
