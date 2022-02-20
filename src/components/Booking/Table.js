@@ -5,14 +5,14 @@ function Table(props) {
     let chairs = [];
     for (var i = 0; i < Math.ceil(props.chairs / 2); i++) {
       chairs.push(
-        <span
+        <i
           key={i}
           className={
             props.empty
-              ? "border bottom-2 border-white bg-red-600 rounded-full m-1 py-1 px-3"
-              : "border bottom-2 border-white bg-white rounded-full m-1 py-1 px-3"
+              ? "fa-solid fa-chair rounded-full m-1 py-1 px-3"
+              : "fa-solid fa-chair  rounded-full m-1 py-1 px-3"
           }
-        ></span>
+        ></i>
       );
     }
     return chairs;
@@ -21,14 +21,14 @@ function Table(props) {
     let chairs2 = [];
     for (var i = 0; i < Math.floor(props.chairs / 2); i++) {
       chairs2.push(
-        <span
+        <i
           key={i}
           className={
             props.empty
-              ? "border bottom-2 border-white bg-red-600 rounded-full m-1 py-1 px-3"
-              : "border bottom-2 border-white bg-white rounded-full m-1 py-1 px-3"
+              ? "fa-solid fa-chair rounded-full m-1 py-1 px-3"
+              : "fa-solid fa-chair   rounded-full m-1 py-1 px-3"
           }
-        ></span>
+        ></i>
       );
     }
     return chairs2;
@@ -40,7 +40,7 @@ function Table(props) {
         className={
           props.empty
             ? "table bg-[#f5f6fa66] p-4 m-2 cursor-pointer rounded-xl"
-            : "table text-left bg-[#f5f6fa66] p-4 m-2 rounded-xl "
+            : "table text-left bg-[#f5f6fa66] opacity-60 p-4 m-2 rounded-xl "
         }
         onClick={() => {
           props.empty

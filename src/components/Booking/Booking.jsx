@@ -316,6 +316,7 @@ function Booking() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mx-8 text-center align-items-center">
               <input
                 type="date"
+                min={new Date().toISOString().split("T")[0]}
                 required="required"
                 className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500"
                 value={selection.date.toISOString().split("T")[0]}
@@ -422,7 +423,7 @@ function Booking() {
                 </Transition>
               </Menu>
             </div>
-            <div className="bg-pink-600 mt-20 mx-20 rounded-xl p-10 text-white">
+            <div className="bg-orange-500 mt-20 mx-20 rounded-xl p-10 text-white">
               <div>
                 {getEmptyTables() > 0 ? (
                   <p className="mb-5">{getEmptyTables()} available</p>
@@ -432,9 +433,9 @@ function Booking() {
                   getEmptyTables() > 0 ? (
                     <div className="my-10">
                       <div className="text-white">
-                        <span className="border border-white bg-red-600 rounded-full m-1 py-1 px-3"></span>
+                        <span className="border border-white bg-[#f5f6fa66] rounded-full m-1 py-1 px-3"></span>
                         &nbsp; Available &nbsp;&nbsp;
-                        <span className="border border-white bg-white rounded-full m-1 py-1 px-3"></span>
+                        <span className="border border-white bg-[#f5f6fa66] opacity-60 rounded-full m-1 py-1 px-3"></span>
                         &nbsp; Unavailable &nbsp;&nbsp;
                       </div>
                       <div className="grid md:grid-cols-4 mt-6 sm:grid-cols-2 grid-cols-1 items-center justify-center">
