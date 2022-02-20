@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Cart from "./components/Cart/Cart";
+import Cart from "./components/cart/Cart";
 import { Routes, Route } from "react-router-dom";
 import Booking from "./components/Booking/Booking";
 import Registration from "./components/registration/registration";
@@ -10,11 +10,11 @@ import Data from "./Data";
 import Buttons from "./Buttons";
 import { Header } from "./components/Header/Header.jsx";
 import Empty from "./components/Empty Cart/Empty";
-import Filter from "./components/Filter/Filter";
+import Filter from "./components/filter/Filter";
 import ThankYou from "./components/ThankYou/ThankYou";
 import About from "./components/about/about";
-import Contact from "./components/Contact/contact";
 import Landing from "./components/Landing/Landing";
+import Footer from "./components/Footer/Footer";
 
 const App = () => {
   const [cart, setCart] = useState([]);
@@ -33,7 +33,6 @@ const App = () => {
         <Route path="login" element={<Login />}></Route>
         <Route path="*" element={<Error />}></Route>
         <Route path="about" element={<About />}></Route>
-        <Route path="contact" element={<Contact />}></Route>
         <Route
           path="cart"
           element={
@@ -58,6 +57,7 @@ const App = () => {
         ></Route>
         <Route path="empty" element={<Empty />}></Route>
       </Routes>
+      <Footer />
     </>
   );
 };
