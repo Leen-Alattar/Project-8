@@ -2,13 +2,13 @@ import React from 'react';
 const Footer = () => {
     return ( <> <div id="footer" className="footer-main">
   
-    <div className="footer-box pad-top-70 ">
+    <div className="footer-box pad-top-70 " >
         <div className="container">
             <div className="row">
                 <div className="footer-in-main">
                     <div className="footer-logo">
                         <div className="text-center">
-                            <img src="images/logo.png" alt="" />
+                            <img src="images/logo.png" alt="" style={{width:' 30% '}}/>
                         </div>
                     </div>
                     <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12 ">
@@ -76,11 +76,11 @@ const Footer = () => {
                             <ul>
                                 <li>
                                     <p>Monday - Thursday </p>
-                                    <span> 11:00 AM - 9:00 PM</span>
+                                    <span> 9:00 AM - 5:00 PM</span>
                                 </li>
                                 <li>
                                     <p>Friday - Saturday </p>
-                                    <span>  11:00 AM - 5:00 PM</span>
+                                    <span> 9:00 AM - 5:00 PM</span>
                                 </li>
                             </ul>
                         </div>

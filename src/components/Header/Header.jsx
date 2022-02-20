@@ -46,7 +46,7 @@ export const Header = ({ LoggedIn, setLoggedIn }) => {
                         className="navbar-brand js-scroll-trigger logo-header"
                         href="#h"
                       >
-                        <img src="images/logo.png" alt="" />
+                        <img src="images/logo.png" alt=""  style={{ width:'100%' }}/>
                       </a>
                     </div>
                   </div>
