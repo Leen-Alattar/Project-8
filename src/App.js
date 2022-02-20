@@ -15,7 +15,7 @@ import ThankYou from "./components/ThankYou/ThankYou";
 import About from "./components/about/about";
 import Landing from "./components/Landing/Landing";
 import Footer from "./components/Footer/Footer";
-
+import "./index.css";
 
 const App = () => {
   const [cart, setCart] = useState([]);
@@ -25,14 +25,24 @@ const App = () => {
 
   return (
     <>
-      <Header emptyCart={emptyCart} setEmptyCart={setEmptyCart} LoggedIn={LoggedIn} setLoggedIn={setLoggedIn}/>
+      <Header
+        emptyCart={emptyCart}
+        setEmptyCart={setEmptyCart}
+        LoggedIn={LoggedIn}
+        setLoggedIn={setLoggedIn}
+      />
       <Routes>
-        
         <Route path="/" element={<Landing />}></Route>
         <Route path="booking" element={<Booking />}></Route>
         <Route path="/success" element={<ThankYou />}></Route>
-        <Route path="register" element={<Register LoggedIn={LoggedIn} setLoggedIn={setLoggedIn} />}></Route>
-        <Route path="login" element={<Login  LoggedIn={LoggedIn} setLoggedIn={setLoggedIn} />}></Route>
+        <Route
+          path="register"
+          element={<Register LoggedIn={LoggedIn} setLoggedIn={setLoggedIn} />}
+        ></Route>
+        <Route
+          path="login"
+          element={<Login LoggedIn={LoggedIn} setLoggedIn={setLoggedIn} />}
+        ></Route>
         <Route path="*" element={<Error />}></Route>
         <Route path="about" element={<About />}></Route>
         <Route
