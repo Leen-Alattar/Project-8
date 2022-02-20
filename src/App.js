@@ -13,8 +13,8 @@ import Empty from "./components/Empty Cart/Empty";
 import Filter from "./components/filter/Filter";
 import ThankYou from "./components/ThankYou/ThankYou";
 import About from "./components/about/about";
-import Contact from "./components/Contact/contact";
 import Landing from "./components/Landing/Landing";
+import Footer from "./components/Footer/Footer";
 
 
 const App = () => {
@@ -33,8 +33,6 @@ const App = () => {
         <Route path="register" element={<Registration />}></Route>
         <Route path="login" element={<Login />}></Route>
         <Route path="*" element={<Error />}></Route>
-        <Route path="about" element={<About />}></Route>
-        <Route path="contact" element={<Contact />}></Route>
         <Route path="about" element={<About />}></Route>
         <Route
           path="cart"
@@ -60,6 +58,7 @@ const App = () => {
         ></Route>
         <Route path="empty" element={<Empty />}></Route>
       </Routes>
+      <Footer />
     </>
   );
 };

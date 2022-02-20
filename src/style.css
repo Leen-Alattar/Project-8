@@ -56,10 +56,9 @@
   font-weight: bold;
 }
 
-a {
+.menu-item-heading a {
 
   display: flex;
- 
   margin-left: 100px;
   color: #E75B1E;
   font-weight: bold;

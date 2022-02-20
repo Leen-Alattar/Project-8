@@ -53,9 +53,7 @@ export const Header = ({ setEmptyCart, emptyCart }) => {
                       <li>
                         <Link to="booking">Reservation</Link>
                       </li>
-                      <li>
-                        <Link to="contact">Contact us</Link>
-                      </li>
+            
                       <li>
                         <Link to="about">About us</Link>
                       </li>
