@@ -9,8 +9,8 @@ function Table(props) {
           key={i}
           className={
             props.empty
-              ? "fa-solid fa-chair rounded-full m-1 py-1 px-3"
-              : "fa-solid fa-chair  rounded-full m-1 py-1 px-3"
+              ? "fa-solid fa-chair m-1 rounded-full py-1 px-3"
+              : "fa-solid fa-chair  m-1 rounded-full py-1 px-3"
           }
         ></i>
       );
@@ -25,8 +25,8 @@ function Table(props) {
           key={i}
           className={
             props.empty
-              ? "fa-solid fa-chair rounded-full m-1 py-1 px-3"
-              : "fa-solid fa-chair   rounded-full m-1 py-1 px-3"
+              ? "fa-solid fa-chair m-1 rounded-full py-1 px-3"
+              : "fa-solid fa-chair   m-1 rounded-full py-1 px-3"
           }
         ></i>
       );
@@ -39,8 +39,8 @@ function Table(props) {
       <div
         className={
           props.empty
-            ? "table bg-[#f5f6fa66] p-4 m-2 cursor-pointer rounded-xl"
-            : "table text-left bg-[#f5f6fa66] opacity-60 p-4 m-2 rounded-xl "
+            ? "m-2 table cursor-pointer rounded-xl bg-[#f5f6fa66] p-4"
+            : "m-2 table rounded-xl bg-[#f5f6fa66] p-4 text-left opacity-60 "
         }
         onClick={() => {
           props.empty
