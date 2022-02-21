@@ -1,5 +1,13 @@
-import React, { useEffect } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+import "./land.css";
+
+import { Pagination, Navigation } from "swiper";
 
 export const Land = () => {
   useEffect(() => {
@@ -7,7 +15,7 @@ export const Land = () => {
   }, []);
   return (
     <>
-      <sdiv>
+      <div>
         <div id="banner" class="banner full-screen-mode parallax">
           <div class="pr container">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -15,7 +23,7 @@ export const Land = () => {
                 <div class="banner-text">
                   <div class="banner-cell" style={{ paddingBottom: "210px" }}>
                     <h1>
-                      Dinner with us{" "}
+                      Dinner with us
                       <span
                         class="typer"
                         id="some-id"
@@ -58,11 +66,10 @@ export const Land = () => {
                   data-wow-delay="0.1s"
                 >
                   <h2 class="block-title color-white text-center">
-                    {" "}
-                    Today's Special{" "}
+                    Today's Special
                   </h2>
                 </div>
-                <div class="special-box">
+                {/* <div class="special-box">
                   <div id="owl-demo">
                     <div class="item item-type-zoom">
                       <div class="item-img">
@@ -90,12 +97,44 @@ export const Land = () => {
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> */}
+                <Swiper
+                  slidesPerView={3}
+                  spaceBetween={30}
+                  slidesPerGroup={1}
+                  loop={true}
+                  loopFillGroupWithBlank={true}
+                  pagination={{
+                    clickable: true,
+                  }}
+                  navigation={true}
+                  modules={[Pagination, Navigation]}
+                  className="mySwiper my-12"
+                >
+                  <SwiperSlide className="item item-type-zoom">
+                    <img src="images/special-menu-1.jpg" alt="sp-menu" />
+                  </SwiperSlide>
+                  <SwiperSlide className="item item-type-zoom">
+                    <img src="images/special-menu-2.jpg" alt="sp-menu" />
+                  </SwiperSlide>
+                  <SwiperSlide className="item item-type-zoom">
+                    <img src="images/special-menu-3.jpg" alt="sp-menu" />
+                  </SwiperSlide>
+                  <SwiperSlide className="item item-type-zoom">
+                    <img src="images/special-menu-2.jpg" alt="sp-menu" />
+                  </SwiperSlide>
+                  <SwiperSlide className="item item-type-zoom">
+                    <img src="images/special-menu-1.jpg" alt="sp-menu" />
+                  </SwiperSlide>
+                  <SwiperSlide className="item item-type-zoom">
+                    <img src="images/special-menu-3.jpg" alt="sp-menu" />
+                  </SwiperSlide>
+                </Swiper>
               </div>
             </div>
           </div>
         </div>
-      </sdiv>
+      </div>
 
       <div id="about" class="about-main pad-top-100 pad-bottom-100">
         <div class="container">
