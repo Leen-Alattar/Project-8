@@ -79,15 +79,15 @@ const Login = ({ LoggedIn, setLoggedIn }) => {
           className="login-image"
           src="user.png"
           alt="Login Logo"
-          class="imgLogin"
+          className="imgLogin"
         />
 
-        <div class="formcontainer">
+        <div className="formcontainer">
           <form className="myForm" onSubmit={submitHandler}>
             <div className="input-container">
-              <i class="fa fa-envelope icon"></i>
+              <i className="fa fa-envelope icon"></i>
               <input
-                class="input-field"
+                className="input-field"
                 placeholder="User Email"
                 type="email"
                 name="email"
@@ -97,9 +97,9 @@ const Login = ({ LoggedIn, setLoggedIn }) => {
             </div>
             <span>{errors.email}</span>
             <div className="input-container">
-              <i class="fa fa-key icon"></i>
+              <i className="fa fa-key icon"></i>
               <input
-                class="input-field"
+                className="input-field"
                 placeholder="User Password"
                 type="password"
                 name="password"

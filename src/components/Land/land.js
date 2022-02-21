@@ -7,17 +7,17 @@ export const Land = () => {
   }, []);
   return (
     <>
-      <sdiv>
-        <div id="banner" class="banner full-screen-mode parallax">
-          <div class="pr container">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-              <div class="banner-static">
-                <div class="banner-text">
-                  <div class="banner-cell" style={{ paddingBottom: "210px" }}>
+      <div>
+        <div id="banner" className="banner full-screen-mode parallax">
+          <div className="pr container">
+            <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <div className="banner-static">
+                <div className="banner-text">
+                  <div className="banner-cell" style={{ paddingBottom: "210px" }}>
                     <h1>
                       Dinner with us{" "}
                       <span
-                        class="typer"
+                        className="typer"
                         id="some-id"
                         data-delay="200"
                         data-delim=":"
@@ -25,16 +25,16 @@ export const Land = () => {
                         data-colors="red"
                       ></span>
                       <span
-                        class="cursor"
+                        className="cursor"
                         data-cursorDisplay="_"
                         data-owner="some-id"
                       ></span>
                     </h1>
                     <h2>Accidental appearances </h2>
-                    <div class="book-btn">
+                    <div className="book-btn">
                       <Link
                         to="/booking"
-                        class="table-btn hvr-underline-from"
+                        className="table-btn hvr-underline-from"
                         style={{ marginLeft: "20px" }}
                       >
                         Book my Table
@@ -48,44 +48,44 @@ export const Land = () => {
           </div>
         </div>
 
-        <div class="special-menu pad-top-100 parallax">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div className="special-menu pad-top-100 parallax">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div
-                  class="wow fadeIn"
+                  className="wow fadeIn"
                   data-wow-duration="1s"
                   data-wow-delay="0.1s"
                 >
-                  <h2 class="block-title color-white text-center">
+                  <h2 className="block-title color-white text-center">
                     {" "}
                     Today's Special{" "}
                   </h2>
                 </div>
-                <div class="special-box">
+                <div className="special-box">
                   <div id="owl-demo">
-                    <div class="item item-type-zoom">
-                      <div class="item-img">
+                    <div className="item item-type-zoom">
+                      <div className="item-img">
                         <img src="images/special-menu-1.jpg" alt="sp-menu" />
                       </div>
                     </div>
-                    <div class="item item-type-zoom">
-                      <div class="item-img">
+                    <div className="item item-type-zoom">
+                      <div className="item-img">
                         <img src="images/special-menu-2.jpg" alt="sp-menu" />
                       </div>
                     </div>
-                    <div class="item item-type-zoom">
-                      <div class="item-img">
+                    <div className="item item-type-zoom">
+                      <div className="item-img">
                         <img src="images/special-menu-3.jpg" alt="sp-menu" />
                       </div>
                     </div>
-                    <div class="item item-type-zoom">
-                      <div class="item-img">
+                    <div className="item item-type-zoom">
+                      <div className="item-img">
                         <img src="images/special-menu-1.jpg" alt="sp-menu" />
                       </div>
                     </div>
-                    <div class="item item-type-zoom">
-                      <div class="item-img">
+                    <div className="item item-type-zoom">
+                      <div className="item-img">
                         <img src="images/special-menu-2.jpg" alt="sp-menu" />
                       </div>
                     </div>
@@ -95,18 +95,18 @@ export const Land = () => {
             </div>
           </div>
         </div>
-      </sdiv>
+      </div>
 
-      <div id="about" class="about-main pad-top-100 pad-bottom-100">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      <div id="about" className="about-main pad-top-100 pad-bottom-100">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
               <div
-                class="wow fadeIn"
+                className="wow fadeIn"
                 data-wow-duration="1s"
                 data-wow-delay="0.1s"
               >
-                <h2 class="block-title"> About Us </h2>
+                <h2 className="block-title"> About Us </h2>
                 <h3>IT STARTED, QUITE SIMPLY, LIKE THIS...</h3>
                 <p>
                   {" "}
@@ -135,20 +135,20 @@ export const Land = () => {
                 </p>
               </div>
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
               <div
-                class="wow fadeIn"
+                className="wow fadeIn"
                 data-wow-duration="1s"
                 data-wow-delay="0.1s"
               >
-                <div class="about-images">
+                <div className="about-images">
                   <img
-                    class="about-main"
+                    className="about-main"
                     src="images/about-main.jpg"
                     alt="About Main Image"
                   />
                   <img
-                    class="about-inset"
+                    className="about-inset"
                     src="images/about-inset.jpg"
                     alt="About Inset Image"
                   />
