@@ -6,7 +6,7 @@ const Empty = () => {
     <main className='empty-Container'>
         <img className="cart-img"  src="cart.png" alt="" />
         <h1 className='cart-notation'>Your Cart is Empty!</h1>
-        <Link to ="/menu" > <button className='shop-btn'>Book Meals</button> </Link>
+        <Link to ="/menu" > <button className='shop-btn'>Book Table </button> </Link>
     </main>
     </> );
 }

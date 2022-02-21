@@ -17,6 +17,7 @@ import Landing from "./components/Landing/Landing";
 import Footer from "./components/Footer/Footer";
 import { Land } from "./components/Land/land";
 import data from "./allTables.json";
+import Profile from "./components/UserProfile/Profile";
 
 import "./index.css";
 
@@ -90,6 +91,7 @@ const App = () => {
         ></Route>
         <Route path="empty" element={<Empty />}></Route>
         <Route path="/logout" element={<Landing />}></Route>
+        <Route path="/profile" element={<Profile />}></Route>
       </Routes>
       <Footer />
     </>

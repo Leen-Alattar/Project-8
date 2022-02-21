@@ -53,7 +53,7 @@ const Card = ({ item, setItem, cart, setCart }) => {
                       <span className="menu-item-name"> {Val.name}</span>
                       <span className="menu-item-price">
                         <a onClick={() => addToCartHandler(Val)}>
-                          {Val.price}
+                          {Val.price} JD
                           <i
                             className="fa fa-shopping-basket"
                             aria-hidden="true"

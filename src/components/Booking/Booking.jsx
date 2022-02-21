@@ -30,11 +30,10 @@ function Booking() {
   });
 
   const [booking, setBooking] = useState({
-    name: "",
+    name: sessionStorage.getItem('currentUser' ) ? JSON.parse(sessionStorage.getItem('currentUser'))[0].name : "",
     phone: "",
-    email: "",
+    email: sessionStorage.getItem('currentUser' ) ? JSON.parse(sessionStorage.getItem('currentUser'))[0].email : ""
   });
-
   // List of potential locations
   const [locations] = useState(["Any Location", "Outside", "Inside", "Garden"]);
   const [times] = useState([

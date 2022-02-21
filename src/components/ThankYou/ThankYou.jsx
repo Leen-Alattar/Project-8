@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-
+import "./thank.css"
 function ThankYou() {
 
   useEffect(()=>{
@@ -8,19 +8,20 @@ function ThankYou() {
 
   
   return (
-    <div>
-      <h1 className="text-center text-5xl mt-10">
-        Thank You!
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/184/184549.png"
+    <div className="thank-container">
+     
+     <img
+          src="booked.png"
           alt="donut"
-          width={50}
+          width={170}
           className="inline ml-4"
         />
+      <h1 className="text-center text-5xl mt-10 ]">
+        Thank You! Booking Confirmed
       </h1>
 
       <p className="text-center text-5xl mt-10">
-        You should receive an email with the details of your reservation.
+        You can view the details of your reservation on your profile .
       </p>
     </div>
   );

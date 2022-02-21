@@ -68,13 +68,14 @@ const CartDish = ({ cart, setCart, dish, setTotalCart, totalCart }) => {
   };
 
   return (
+    
     <tr>
       <td data-label="Dish">
-        <img width="100px" src={dish.img} alt="" />
+        <img width="100px" className="dish-image" src={dish.img} alt="" />
       </td>
       <td data-label="Dish Name">{dish.name}</td>
       <td data-label="Price"> {dish.price} JD</td>
-      <td data-label="Quantity">
+      <td data-label="Quantity" className="quantity">
         <div className="quantity-td">
           <button className="btn-minus" type="button" onClick={decrementCount}>
             &#9866;
