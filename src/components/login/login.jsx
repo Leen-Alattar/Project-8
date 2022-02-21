@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 import "./login.css";
 
@@ -10,6 +10,10 @@ const Login = ({ LoggedIn, setLoggedIn }) => {
     email: "",
     password: "",
   });
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const setValue = (e) => {
     setErrors([]);
@@ -77,7 +81,7 @@ const Login = ({ LoggedIn, setLoggedIn }) => {
           alt="Login Logo"
           class="imgLogin"
         />
-       
+
         <div class="formcontainer">
           <form className="myForm" onSubmit={submitHandler}>
             <div className="input-container">

@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 const CartDish = ({ cart, setCart, dish, setTotalCart, totalCart }) => {
   const [count, setCount] = useState(dish.total);
   const [total, setTotal] = useState(dish.price * dish.total);
-  
+
   var countTotal = 0;
   let navigate = useNavigate();
 
@@ -34,6 +34,9 @@ const CartDish = ({ cart, setCart, dish, setTotalCart, totalCart }) => {
     setCart(remainder);
   };
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   //get the total cart
   useEffect(() => {
     let updateCart = JSON.parse(sessionStorage.getItem("cart"));
@@ -71,7 +74,7 @@ const CartDish = ({ cart, setCart, dish, setTotalCart, totalCart }) => {
       </td>
       <td data-label="Dish Name">{dish.name}</td>
       <td data-label="Price"> {dish.price} JD</td>
-      <td data-label="Quantity" >
+      <td data-label="Quantity">
         <div className="quantity-td">
           <button className="btn-minus" type="button" onClick={decrementCount}>
             &#9866;

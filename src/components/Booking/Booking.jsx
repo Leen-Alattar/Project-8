@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/solid";
 import data from "../../allTables.json";
-import './Booking.css';
+import "./Booking.css";
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
@@ -12,6 +12,10 @@ function classNames(...classes) {
 function Booking() {
   let navigate = useNavigate();
   const [totalTables, setTotalTables] = useState([]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   // User's selections
   const [selection, setSelection] = useState({
@@ -300,7 +304,7 @@ function Booking() {
       <div className="my-[150px] lg:mx-[130px]">
         <div className="align-items-center mt-8 text-center">
           <div>
-            <h1 className="text-[3rem] book-header">
+            <h1 className="book-header text-[3rem]">
               {!selection.table.id ? "Book a Table" : "Confirm Reservation"}
               <i
                 className={

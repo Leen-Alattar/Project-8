@@ -17,6 +17,10 @@ const Cart = ({ cart, setCart, setEmptyCart, emptyCart }) => {
     }
   }, [setCart, navigate]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const takeAway = () => {
     let currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
     if (currentUser !== null) {
@@ -25,15 +29,15 @@ const Cart = ({ cart, setCart, setEmptyCart, emptyCart }) => {
       console.log(currentUser);
       users.map((user) => {
         if (user.email == currentUser.email) {
-          if ( !user.takeAway ) {
+          if (!user.takeAway) {
             user.takeAway = [{ ...cart }];
           } else {
-            user.takeAway =[...user.takeAway, { ...cart }];
+            user.takeAway = [...user.takeAway, { ...cart }];
           }
         }
       });
       localStorage.setItem("users", JSON.stringify(users));
-   navigate("/success");
+      navigate("/success");
     } else {
       navigate("/login");
     }

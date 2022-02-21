@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import "./Header.css";
 
-export const Header = ({ LoggedIn, setLoggedIn }) => {
+export const Header = ({ LoggedIn, setLoggedIn, cart, setCart }) => {
   let navigate = useNavigate();
 
   const u = () => {
@@ -13,7 +14,7 @@ export const Header = ({ LoggedIn, setLoggedIn }) => {
       navigate("/cart");
     }
   };
-
+  useEffect(() => {}, [cart]);
   const logoutHandler = () => {
     setLoggedIn(false);
     sessionStorage.clear();
@@ -46,7 +47,11 @@ export const Header = ({ LoggedIn, setLoggedIn }) => {
                         className="navbar-brand js-scroll-trigger logo-header"
                         href="#h"
                       >
-                        <img src="images/logo.png" alt=""  style={{ width:'100%' }}/>
+                        <img
+                          src="images/logo.png"
+                          alt=""
+                          style={{ width: "100%" }}
+                        />
                       </a>
                     </div>
                   </div>
@@ -78,14 +83,27 @@ export const Header = ({ LoggedIn, setLoggedIn }) => {
                           <Link to="register">Register</Link>
                         </li>
                       )}
-                      <li>
+                      <li className="">
                         <a>
                           <i
                             onClick={u}
-                            className="fa fa-shopping-basket"
+                            className="fa fa-shopping-basket relative"
                             aria-hidden="true"
-                            style={{ fontSize:"20px"}}
-                          ></i>
+                            style={{ fontSize: "20px" }}
+                          >
+                            {JSON.parse(sessionStorage.getItem("cart")) &&
+                            JSON.parse(sessionStorage.getItem("cart")).length >
+                              0 ? (
+                              <span className="cart-counter absolute top-[-10px] right-0 z-10 text-[10px]">
+                                {
+                                  JSON.parse(sessionStorage.getItem("cart"))
+                                    .length
+                                }
+                              </span>
+                            ) : (
+                              ""
+                            )}
+                          </i>
                         </a>
                       </li>
                     </ul>
