@@ -1,5 +1,13 @@
-import React, { useEffect } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+import "./land.css";
+
+import { Pagination, Navigation } from "swiper";
 
 export const Land = () => {
   useEffect(() => {
@@ -15,7 +23,7 @@ export const Land = () => {
                 <div className="banner-text">
                   <div className="banner-cell" style={{ paddingBottom: "210px" }}>
                     <h1>
-                      Dinner with us{" "}
+                      Dinner with us
                       <span
                         className="typer"
                         id="some-id"
@@ -58,8 +66,8 @@ export const Land = () => {
                   data-wow-delay="0.1s"
                 >
                   <h2 className="block-title color-white text-center">
-                    {" "}
-                    Today's Special{" "}
+             
+                    Today's Special
                   </h2>
                 </div>
                 <div className="special-box">
@@ -90,7 +98,39 @@ export const Land = () => {
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> 
+                <Swiper
+                  slidesPerView={3}
+                  spaceBetween={30}
+                  slidesPerGroup={1}
+                  loop={true}
+                  loopFillGroupWithBlank={true}
+                  pagination={{
+                    clickable: true,
+                  }}
+                  navigation={true}
+                  modules={[Pagination, Navigation]}
+                  className="mySwiper my-12"
+                >
+                  <SwiperSlide className="item item-type-zoom">
+                    <img src="images/special-menu-1.jpg" alt="sp-menu" />
+                  </SwiperSlide>
+                  <SwiperSlide className="item item-type-zoom">
+                    <img src="images/special-menu-2.jpg" alt="sp-menu" />
+                  </SwiperSlide>
+                  <SwiperSlide className="item item-type-zoom">
+                    <img src="images/special-menu-3.jpg" alt="sp-menu" />
+                  </SwiperSlide>
+                  <SwiperSlide className="item item-type-zoom">
+                    <img src="images/special-menu-2.jpg" alt="sp-menu" />
+                  </SwiperSlide>
+                  <SwiperSlide className="item item-type-zoom">
+                    <img src="images/special-menu-1.jpg" alt="sp-menu" />
+                  </SwiperSlide>
+                  <SwiperSlide className="item item-type-zoom">
+                    <img src="images/special-menu-3.jpg" alt="sp-menu" />
+                  </SwiperSlide>
+                </Swiper>
               </div>
             </div>
           </div>

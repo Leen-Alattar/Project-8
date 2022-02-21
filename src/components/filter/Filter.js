@@ -3,7 +3,7 @@ import Buttons from "../../Buttons";
 import Card from "../../Card";
 import Data from "../../Data";
 
-const Filter = ({ item, setItem }) => {
+const Filter = ({ item, setItem ,counter, setCounter}) => {
   const menuItems = [...new Set(Data.map((Val) => Val.category))];
 
   useEffect(() => {
@@ -27,7 +27,8 @@ const Filter = ({ item, setItem }) => {
             setItem={setItem}
             menuItems={menuItems}
           />
-          <Card item={item} />
+          <Card item={item}  counter={counter}
+              setCounter={setCounter}/>
         </div>
       </div>
     </>

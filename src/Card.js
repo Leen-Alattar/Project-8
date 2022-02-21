@@ -2,7 +2,8 @@ import React from "react";
 import "./style.css";
 import { motion } from "framer-motion";
 
-const Card = ({ item, setItem, cart, setCart }) => {
+const Card = ({ item, setItem, counter, setCounter}) => {
+ 
   const addToCartHandler = (dish) => {
     if (sessionStorage.getItem("cart") == null) {
       sessionStorage.setItem("cart", JSON.stringify([dish]));
@@ -23,7 +24,9 @@ const Card = ({ item, setItem, cart, setCart }) => {
         cart = [...cart, dish];
         sessionStorage.setItem("cart", JSON.stringify(cart));
       }
+
     }
+    setCounter(JSON.parse(sessionStorage.getItem("cart")).length);
   };
 
   return (
