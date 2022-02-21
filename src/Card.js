@@ -59,7 +59,7 @@ const Card = ({ item, setItem, cart, setCart }) => {
                             aria-hidden="true"
                             style={{ marginLeft: "10px" }}
                           ></i>
-                        </a>{" "}
+                        </a>
                       </span>
                     </h3>
                     <p className="menu-item-description">{Val.description}</p>

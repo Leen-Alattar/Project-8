@@ -30,9 +30,13 @@ function Booking() {
   });
 
   const [booking, setBooking] = useState({
-    name: sessionStorage.getItem('currentUser' ) ? JSON.parse(sessionStorage.getItem('currentUser'))[0].name : "",
+    name: sessionStorage.getItem("currentUser")
+      ? JSON.parse(sessionStorage.getItem("currentUser")).name
+      : "",
     phone: "",
-    email: sessionStorage.getItem('currentUser' ) ? JSON.parse(sessionStorage.getItem('currentUser'))[0].email : ""
+    email: sessionStorage.getItem("currentUser")
+      ? JSON.parse(sessionStorage.getItem("currentUser")).email
+      : "",
   });
   // List of potential locations
   const [locations] = useState(["Any Location", "Outside", "Inside", "Garden"]);
