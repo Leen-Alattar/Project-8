@@ -72,7 +72,10 @@ export const Header = ({ LoggedIn, setLoggedIn }) => {
                         )}
                       </li>
                       {LoggedIn === true ? (
-                        ""
+                            <li>
+                            <Link to="profile"><i class="fa-solid fa-user"></i></Link>
+                          </li>
+
                       ) : (
                         <li>
                           <Link to="register">Register</Link>

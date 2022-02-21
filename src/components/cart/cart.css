@@ -22,7 +22,7 @@ table {
     padding: 0;
     width: 100%;
     table-layout: fixed;
-    
+
 }
 
 table tr {
@@ -142,7 +142,7 @@ table th {
     width: 60%;
     font-size: 20px;
     border: none;
-    background-color: var(--mainColor)  !important;
+    background-color: var(--mainColor) !important;
     color: #fff;
     transform: translateY(0);
     transition: all .3s;
@@ -235,19 +235,32 @@ table th {
         height: 32.25px;
     }
 
-    .quantity-td div {
+    .quantity-td {
         margin-top: 0;
+        margin-left: 75%;
+    }
+
+    .dish-image {
+        margin-left: 68%;
     }
 }
 
 @media screen and (max-width: 376px) {
-    .quantity-td div {
-        margin-left: 52%;
+    .quantity-td {
+        margin-left: 70%;
+    }
+
+    .dish-image {
+        margin-left: 64%;
     }
 }
 
 @media screen and (max-width: 321px) {
-    .quantity-td div {
-        margin-left: 44%;
+    .quantity-td {
+        margin-left: 65%;
+    }
+
+    .dish-image {
+        margin-left: 58%;
     }
 }
