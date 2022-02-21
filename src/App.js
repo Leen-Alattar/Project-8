@@ -28,6 +28,10 @@ const App = () => {
   const [LoggedIn, setLoggedIn] = useState(false);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     if (!localStorage.getItem("booking")) {
       localStorage.setItem(
         "booking",
@@ -46,6 +50,8 @@ const App = () => {
         setEmptyCart={setEmptyCart}
         LoggedIn={LoggedIn}
         setLoggedIn={setLoggedIn}
+        cart={cart}
+        setCart={setCart}
       />
       <Routes>
         <Route path="/" element={<Land />}></Route>
