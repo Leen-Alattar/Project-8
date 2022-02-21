@@ -71,8 +71,8 @@ const CartDish = ({ cart, setCart, dish, setTotalCart, totalCart }) => {
       </td>
       <td data-label="Dish Name">{dish.name}</td>
       <td data-label="Price"> {dish.price} JD</td>
-      <td data-label="Quantity" className="quantity-td">
-        <div>
+      <td data-label="Quantity" >
+        <div className="quantity-td">
           <button className="btn-minus" type="button" onClick={decrementCount}>
             &#9866;
           </button>

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
-import './login.css';
-
+import "./login.css";
 
 const Login = ({ LoggedIn, setLoggedIn }) => {
   const [errors, setErrors] = useState([]);
@@ -51,7 +50,6 @@ const Login = ({ LoggedIn, setLoggedIn }) => {
         errors["email"] = "You have to register first :) ";
         isValid = false;
       } else if (u[0].password !== user.password) {
-
         errors["password"] = "Wrong password  :( ";
         isValid = false;
       } else {
@@ -63,7 +61,7 @@ const Login = ({ LoggedIn, setLoggedIn }) => {
           email: "",
           password: "",
         });
-       navigate(-1);
+        navigate(-1);
       }
     }
     setErrors(errors);
@@ -71,50 +69,49 @@ const Login = ({ LoggedIn, setLoggedIn }) => {
 
   return (
     <React.Fragment>
-      {LoggedIn ? <Navigate to="/post" replace={true} /> : ""}
-    
-      
-      <h1 id="heading1">Login Here</h1>
-      <img className="login-image" src="https://cdn-icons.flaticon.com/png/512/3711/premium/3711310.png?token=exp=1645363063~hmac=9df8eea5c84c37bca7b54cbaadb2d8f0" alt="Login Logo" class ="imgLogin" />
-      <div>&#160;</div>
-      <div>&#160;</div>
-      <div class= "loginContainer">
-      <form className="myForm" onSubmit={submitHandler}>
-        <div className="input-container">
-        <i class="fa fa-envelope icon"></i>
-          <input
-          class="input-field"
-          placeholder="User Email"
-            type="email"
-            name="email"
-            value={user.email}
-            onChange={setValue}/>
-          <small>{errors.email}</small>
+      <main className="login-wrapper">
+        <h1 id="heading1">Login</h1>
+        <img
+          className="login-image"
+          src="user.png"
+          alt="Login Logo"
+          class="imgLogin"
+        />
+       
+        <div class="formcontainer">
+          <form className="myForm" onSubmit={submitHandler}>
+            <div className="input-container">
+              <i class="fa fa-envelope icon"></i>
+              <input
+                class="input-field"
+                placeholder="User Email"
+                type="email"
+                name="email"
+                value={user.email}
+                onChange={setValue}
+              />
+            </div>
+            <span>{errors.email}</span>
+            <div className="input-container">
+              <i class="fa fa-key icon"></i>
+              <input
+                class="input-field"
+                placeholder="User Password"
+                type="password"
+                name="password"
+                value={user.password}
+                onChange={setValue}
+                autoComplete="on"
+              />
+            </div>
+            <span>{errors.password}</span>
+            <button className="bttn" type="submit">
+              Login
+            </button>
+          </form>
         </div>
-        <div className="input-container">
-        <i class="fa fa-key icon"></i>
-          <input
-          class="input-field"  
-          placeholder="User Password"
-            type="password"
-            name="password"
-            value={user.password}
-            onChange={setValue}
-            autoComplete="on"
-          />
-          <small>{errors.password}</small>
-        </div>
-        <button className="bttn" type="submit">
-          Login
-        </button>
-      </form>
-      </div>
+      </main>
     </React.Fragment>
   );
 };
 export default Login;
-
-
-
-
-

@@ -5,8 +5,8 @@ import CartDish from "./CartDish";
 
 const Cart = ({ cart, setCart, setEmptyCart, emptyCart }) => {
   const [totalCart, setTotalCart] = useState(0);
-  const [radio, setRadio] = useState('book');
-  const  navigate = useNavigate();
+  const [radio, setRadio] = useState("book");
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (sessionStorage.getItem("cart") !== null) {
@@ -16,6 +16,28 @@ const Cart = ({ cart, setCart, setEmptyCart, emptyCart }) => {
       navigate("/empty");
     }
   }, [setCart, navigate]);
+
+  const takeAway = () => {
+    let currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
+    if (currentUser !== null) {
+      let users = JSON.parse(localStorage.getItem("users"));
+      let cart = JSON.parse(sessionStorage.getItem("cart"));
+      console.log(currentUser);
+      users.map((user) => {
+        if (user.email == currentUser.email) {
+          if ( !user.takeAway ) {
+            user.takeAway = [{ ...cart }];
+          } else {
+            user.takeAway =[...user.takeAway, { ...cart }];
+          }
+        }
+      });
+      localStorage.setItem("users", JSON.stringify(users));
+   navigate("/success");
+    } else {
+      navigate("/login");
+    }
+  };
 
   return (
     <React.Fragment>
@@ -40,28 +62,49 @@ const Cart = ({ cart, setCart, setEmptyCart, emptyCart }) => {
                 dish={dish}
                 dishId={dish.id}
                 totalCart={totalCart}
-                setTotalCart={setTotalCart} /> ))}
+                setTotalCart={setTotalCart}
+              />
+            ))}
           </tbody>
         </table>
         <div className="check-out">
-          <h1> <strong>Order Summary</strong> </h1>
+          <h1>
+            {" "}
+            <strong>Order Summary</strong>{" "}
+          </h1>
           <div className="total-cart">
             <strong>Total Cart</strong>
             <strong>{totalCart} JD</strong>
           </div>
           <div className="book-option">
             <div>
-              <input type="radio" id="book" name="book" value="book" 
-              checked={radio === "book"} onChange={(e)=>setRadio(e.target.value)} />
+              <input
+                type="radio"
+                id="book"
+                name="book"
+                value="book"
+                checked={radio === "book"}
+                onChange={(e) => setRadio(e.target.value)}
+              />
               <label htmlFor="book">BooK Table</label>
             </div>
             <div>
-              <input type="radio" id="take" name="book" value="take" 
-              checked={radio === "take"} onChange={(e)=>setRadio(e.target.value)} />
+              <input
+                type="radio"
+                id="take"
+                name="book"
+                value="take"
+                checked={radio === "take"}
+                onChange={(e) => setRadio(e.target.value)}
+              />
               <label htmlFor="take">Take Away</label>
             </div>
           </div>
-          {radio === 'take'  ?<button> Book Now </button> : <button > Book table </button>}
+          {radio === "take" ? (
+            <button onClick={takeAway}> Book Now </button>
+          ) : (
+            <button onClick={() => navigate("/booking")}> Book table </button>
+          )}
         </div>
       </div>
     </React.Fragment>

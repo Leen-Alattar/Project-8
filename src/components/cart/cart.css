@@ -68,7 +68,7 @@ table th {
 .btn-plus {
     padding: 5px;
     border: 1px solid var(--mainColor);
-    background-color: var(--mainColor);
+    background-color: var(--mainColor) !important;
     color: white;
     transform: translateY(0);
     transition: all .2s;
@@ -142,7 +142,7 @@ table th {
     width: 60%;
     font-size: 20px;
     border: none;
-    background-color: var(--mainColor);
+    background-color: var(--mainColor)  !important;
     color: #fff;
     transform: translateY(0);
     transition: all .3s;

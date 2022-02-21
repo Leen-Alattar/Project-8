@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 function ThankYou() {
+
+  useEffect(()=>{
+    sessionStorage.removeItem('cart');
+  },[])
+
+  
   return (
     <div>
       <h1 className="text-center text-5xl mt-10">

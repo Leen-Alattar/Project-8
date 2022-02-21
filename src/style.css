@@ -32,6 +32,7 @@
 
 .menu-item {
   display: flex;
+  width : 100%;
 }
 
 .menu-item-image {
@@ -104,7 +105,7 @@ a :hover {
 }
 .container3 {
   text-align: center;
-  margin-top: 200px;
+  margin-top: 100px;
   padding: 20px;
 }
 .head {
@@ -115,4 +116,20 @@ a :hover {
 }
 .b3 {
   margin: 8px;
+}
+@media(max-width: 426px){
+  .container2 {
+    padding: 0;
+    margin: auto;
+  }
+  .container3{
+    padding: 20px 0;
+  }
+ .menu-item-heading{
+  flex-direction: column;
+  }
+  .menu-item-heading a{
+    margin-left:0 ;
+    margin-top: 12px;
+  }
 }
