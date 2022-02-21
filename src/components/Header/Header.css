@@ -4,8 +4,15 @@
   height: 15px;
   border-radius: 50%;
   position: absolute;
-  background-color: orange;
-  top: -5px;
+  background-color:   #e75b1e;
+  top: -2px;
   z-index: -2;
   right: -3px;
+  
+}
+.cart-counter:hover{
+  color: white;
+}
+.header-cart:hover{
+  color: white;
 }

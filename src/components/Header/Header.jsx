@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Header.css";
 
-export const Header = ({ LoggedIn, setLoggedIn, cart, setCart }) => {
+export const Header = ({ LoggedIn, setLoggedIn, counter, setCounter }) => {
   let navigate = useNavigate();
 
   const u = () => {
@@ -14,7 +14,8 @@ export const Header = ({ LoggedIn, setLoggedIn, cart, setCart }) => {
       navigate("/cart");
     }
   };
-  useEffect(() => {}, [cart]);
+ 
+
   const logoutHandler = () => {
     setLoggedIn(false);
     sessionStorage.clear();
@@ -78,7 +79,7 @@ export const Header = ({ LoggedIn, setLoggedIn, cart, setCart }) => {
                       </li>
                       {LoggedIn === true ? (
                             <li>
-                            <Link to="profile"><i class="fa-solid fa-user"></i></Link>
+                            <Link to="profile"><i className="fa-solid fa-user"></i></Link>
                           </li>
 
                       ) : (
@@ -90,14 +91,14 @@ export const Header = ({ LoggedIn, setLoggedIn, cart, setCart }) => {
                         <a>
                           <i
                             onClick={u}
-                            className="fa fa-shopping-basket relative"
+                            className="fa fa-shopping-basket relative header-cart"
                             aria-hidden="true"
                             style={{ fontSize: "20px" }}
                           >
-                            {JSON.parse(sessionStorage.getItem("cart")) &&
+                            { JSON.parse(sessionStorage.getItem("cart")) &&
                             JSON.parse(sessionStorage.getItem("cart")).length >
                               0 ? (
-                              <span className="cart-counter absolute top-[-10px] right-0 z-10 text-[10px]">
+                              <span className="cart-counter absolute top-[-11px] right-0 z-10 text-[10px]">
                                 {
                                   JSON.parse(sessionStorage.getItem("cart"))
                                     .length

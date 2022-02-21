@@ -18,22 +18,22 @@ const Footer = () => {
                             <ul className="socials-box footer-socials pull-left">
                                 <li>
                                     <a href="#">
-                                        <div className="social-circle-border"><i class="fa-brands fa-facebook"></i></div>
+                                        <div className="social-circle-border"><i className="fa-brands fa-facebook"></i></div>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <div className="social-circle-border"><i class="fa-brands fa-twitter"></i></div>
+                                        <div className="social-circle-border"><i className="fa-brands fa-twitter"></i></div>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <div className="social-circle-border"><i class="fa-brands fa-instagram-square"></i></div>
+                                        <div className="social-circle-border"><i className="fa-brands fa-instagram-square"></i></div>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <div className="social-circle-border"><i class="fa-brands fa-snapchat-square"></i></div>
+                                        <div className="social-circle-border"><i className="fa-brands fa-snapchat-square"></i></div>
                                     </a>
                                 </li>
                                

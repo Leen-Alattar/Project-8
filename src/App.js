@@ -26,6 +26,7 @@ const App = () => {
   const [emptyCart, setEmptyCart] = useState(false);
   const [item, setItem] = useState(Data);
   const [LoggedIn, setLoggedIn] = useState(false);
+  const [counter, setCounter] = useState(0);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -50,8 +51,8 @@ const App = () => {
         setEmptyCart={setEmptyCart}
         LoggedIn={LoggedIn}
         setLoggedIn={setLoggedIn}
-        cart={cart}
-        setCart={setCart}
+        counter={counter}
+        setCounter={setCounter}
       />
       <Routes>
         <Route path="/" element={<Land />}></Route>
@@ -86,6 +87,8 @@ const App = () => {
               setCart={setCart}
               item={item}
               setItem={setItem}
+              counter={counter}
+              setCounter={setCounter}
             />
           }
         ></Route>

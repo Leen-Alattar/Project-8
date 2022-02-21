@@ -95,15 +95,15 @@ const Register = ({ LoggedIn, setLoggedIn }) => {
           className="login-image"
           src="user.png"
           alt="Login Logo"
-          class="imgLogin"
+          className="imgLogin"
         />
 
-        <div class="formcontainer">
+        <div className="formcontainer">
           <form className="myForm" onSubmit={submitHandler}>
             <div className="input-container">
-              <i class="fa-regular fa-user  icon "></i>
+              <i className="fa-regular fa-user  icon "></i>
               <input
-                class="input-field"
+                className="input-field"
                 placeholder="User Name"
                 type="text"
                 name="name"
@@ -113,9 +113,9 @@ const Register = ({ LoggedIn, setLoggedIn }) => {
             </div>
             <span> {errors.name} </span>
             <div className="input-container">
-              <i class="fa fa-envelope icon"></i>
+              <i className="fa fa-envelope icon"></i>
               <input
-                class="input-field"
+                className="input-field"
                 placeholder="User Email"
                 type="email"
                 name="email"
@@ -125,9 +125,9 @@ const Register = ({ LoggedIn, setLoggedIn }) => {
             </div>
             <span>{errors.email}</span>
             <div className="input-container">
-              <i class="fa fa-key icon"></i>
+              <i className="fa fa-key icon"></i>
               <input
-                class="input-field"
+                className="input-field"
                 placeholder="User Password"
                 type="password"
                 name="password"
