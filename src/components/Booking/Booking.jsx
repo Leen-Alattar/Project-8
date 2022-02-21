@@ -174,7 +174,7 @@ function Booking() {
               key={i}
               className={classNames(
                 active ? "bg-gray-100 text-gray-900" : "text-gray-700",
-                "w-full block px-4 py-2 text-sm"
+                "block w-full px-4 py-2 text-sm"
               )}
               onClick={(e) => {
                 let newSel = {
@@ -207,7 +207,7 @@ function Booking() {
               key={loc}
               className={classNames(
                 active ? "bg-gray-100 text-gray-900" : "text-gray-700",
-                "w-full block px-4 py-2 text-sm"
+                "block w-full px-4 py-2 text-sm"
               )}
               onClick={() => {
                 let newSel = {
@@ -240,7 +240,7 @@ function Booking() {
               key={time}
               className={classNames(
                 active ? "bg-gray-100 text-gray-900" : "text-gray-700",
-                "w-full block px-4 py-2 text-sm"
+                "block w-full px-4 py-2 text-sm"
               )}
               onClick={() => {
                 let newSel = {
@@ -297,27 +297,27 @@ function Booking() {
 
   return (
     <>
-      <div className="mt-[150px]">
-        <div className="text-center align-items-center mt-8">
+      <div className="my-[150px]">
+        <div className="align-items-center mt-8 text-center">
           <div>
-            <h1 className="text-5xl">
+            <h1 className="text-[3rem] ">
               {!selection.table.id ? "Book a Table" : "Confirm Reservation"}
               <i
                 className={
                   !selection.table.id
-                    ? "fas fa-chair text-pink-600 ml-3 text-5xl"
-                    : "fas fa-clipboard-check text-pink-600 ml-3 text-5xl"
+                    ? "fas fa-chair ml-3 text-[3rem] text-orange-600"
+                    : "fas fa-clipboard-check ml-3 text-[3rem] text-orange-600"
                 }
               ></i>
             </h1>
-            <p className="mt-6 text-3xl">
+            <p className="mt-6  text-[20px]">
               {selection.table.id
-                ? "You are booking table " + selection.table.name
+                ? "You are booking " + selection.table.name
                 : null}
             </p>
 
             {reservationError ? (
-              <p className="text-red-500 mt-3">
+              <p className="mt-3 text-red-500">
                 * Please fill out all of the details.
               </p>
             ) : null}
@@ -326,12 +326,12 @@ function Booking() {
 
         {!selection.table.id ? (
           <div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mx-8 text-center align-items-center">
+            <div className="align-items-center mx-8 grid grid-cols-2 gap-4   text-center md:grid-cols-4">
               <input
                 type="date"
                 min={new Date().toISOString().split("T")[0]}
                 required="required"
-                className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500"
+                className="inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-[12px] text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100 sm:text-[15px]"
                 value={selection.date.toISOString().split("T")[0]}
                 onChange={(e) => {
                   if (!isNaN(new Date(new Date(e.target.value)))) {
@@ -358,7 +358,7 @@ function Booking() {
               ></input>
               <Menu as="div" className="relative inline-block text-left">
                 <div>
-                  <Menu.Button className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500">
+                  <Menu.Button className="inline-flex h-14 w-full items-center justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-[12px] text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100 sm:text-[15px]">
                     {selection.time === null ? "Select a Time" : selection.time}
                     <ChevronDownIcon
                       className="-mr-1 ml-2 h-5 w-5"
@@ -376,7 +376,7 @@ function Booking() {
                   leaveFrom="transform opacity-100 scale-100"
                   leaveTo="transform opacity-0 scale-95"
                 >
-                  <Menu.Items className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                  <Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                     <div className="py-1">{getTimes()}</div>
                   </Menu.Items>
                 </Transition>
@@ -384,7 +384,7 @@ function Booking() {
 
               <Menu as="div" className="relative inline-block text-left">
                 <div>
-                  <Menu.Button className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500">
+                  <Menu.Button className="inline-flex h-14 w-full items-center justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-[12px] text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100 sm:text-[15px]">
                     {selection.location}
                     <ChevronDownIcon
                       className="-mr-1 ml-2 h-5 w-5"
@@ -402,7 +402,7 @@ function Booking() {
                   leaveFrom="transform opacity-100 scale-100"
                   leaveTo="transform opacity-0 scale-95"
                 >
-                  <Menu.Items className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                  <Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                     <div className="py-1">{getLocations()}</div>
                   </Menu.Items>
                 </Transition>
@@ -410,7 +410,7 @@ function Booking() {
 
               <Menu as="div" className="relative inline-block text-left">
                 <div>
-                  <Menu.Button className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500">
+                  <Menu.Button className="inline-flex h-14 w-full items-center justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-[12px] text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100 sm:text-[15px]">
                     {selection.size === 0
                       ? "Select a Party Size"
                       : selection.size.toString()}
@@ -430,13 +430,13 @@ function Booking() {
                   leaveFrom="transform opacity-100 scale-100"
                   leaveTo="transform opacity-0 scale-95"
                 >
-                  <Menu.Items className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                  <Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                     <div className="py-1">{getSizes()}</div>
                   </Menu.Items>
                 </Transition>
               </Menu>
             </div>
-            <div className="bg-orange-500 mt-20 mx-20 rounded-xl p-10 text-white">
+            <div className="mx-5 mt-20 rounded-xl bg-orange-500 p-10 text-white md:mx-20">
               <div>
                 {getEmptyTables() > 0 ? (
                   <p className="mb-5">{getEmptyTables()} available</p>
@@ -446,22 +446,22 @@ function Booking() {
                   getEmptyTables() > 0 ? (
                     <div className="my-10">
                       <div className="text-white">
-                        <span className="border border-white bg-[#f5f6fa66] rounded-full m-1 py-1 px-3"></span>
+                        <span className="m-1 rounded-full border border-white bg-[#f5f6fa66] py-1 px-3"></span>
                         &nbsp; Available &nbsp;&nbsp;
-                        <span className="border border-white bg-[#f5f6fa66] opacity-60 rounded-full m-1 py-1 px-3"></span>
+                        <span className="m-1 rounded-full border border-white bg-[#f5f6fa66] py-1 px-3 opacity-60"></span>
                         &nbsp; Unavailable &nbsp;&nbsp;
                       </div>
-                      <div className="grid md:grid-cols-4 mt-6 sm:grid-cols-2 grid-cols-1 items-center justify-center">
+                      <div className="mt-6 grid grid-cols-2  items-center justify-center gap-4 sm:grid-cols-3 md:grid-cols-4 md:gap-0">
                         {getTables()}
                       </div>
                     </div>
                   ) : (
-                    <p className="p-5 text-center text-2xl text-white">
+                    <p className="p-5 text-center text-[1.5rem]  text-white">
                       No Available Tables
                     </p>
                   )
                 ) : (
-                  <p className="p-5 text-center text-2xl text-white">
+                  <p className="p-5 text-center text-[1.5rem] text-white">
                     Please select a date and time for your reservation.
                   </p>
                 )}
@@ -470,11 +470,11 @@ function Booking() {
           </div>
         ) : (
           <div>
-            <div className="md:mx-auto max-w-2xl mx-6 mt-8">
+            <div className="mx-6 mt-8 max-w-2xl md:mx-auto">
               <div className="mb-6">
                 <label
                   htmlFor="name"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-black"
+                  className="mb-2 block text-[12px] font-bold  text-gray-900 dark:text-black sm:text-[12px]"
                 >
                   Your Name
                 </label>
@@ -482,7 +482,7 @@ function Booking() {
                   type="text"
                   bsSize="lg"
                   placeholder="Name"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-pink-500 focus:border-pink-500 block w-full p-2.5 dark:bg-white dark:border-gray-500 dark:placeholder-gray-400 dark:text-black dark:focus:ring-pink-500 dark:focus:border-pink-500"
+                  className="block h-14 w-full  rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-[10px] text-sm text-gray-900 focus:border-orange-500 focus:ring-orange-500 dark:border-gray-500 dark:bg-white dark:text-black dark:placeholder-gray-400 dark:focus:border-orange-500 dark:focus:ring-orange-500"
                   value={booking.name}
                   onChange={(e) => {
                     setBooking({
@@ -495,7 +495,7 @@ function Booking() {
               <div className="mb-6">
                 <label
                   htmlFor="number"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-black"
+                  className="mb-2 block text-[12px] font-bold  text-gray-900  dark:text-black sm:text-[12px]"
                 >
                   Your Number
                 </label>
@@ -503,7 +503,7 @@ function Booking() {
                   type="number"
                   bsSize="lg"
                   placeholder="Phone Number"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-pink-500 focus:border-pink-500 block w-full p-2.5 dark:bg-white dark:border-gray-500 dark:placeholder-gray-400 dark:text-black dark:focus:ring-pink-500 dark:focus:border-pink-500"
+                  className="block h-14  w-full  rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-[10px] text-sm text-gray-900 focus:border-orange-500 focus:ring-orange-500 dark:border-gray-500 dark:bg-white dark:text-black dark:placeholder-gray-400 dark:focus:border-orange-500 dark:focus:ring-orange-500"
                   value={booking.phone}
                   onChange={(e) => {
                     setBooking({
@@ -516,7 +516,7 @@ function Booking() {
               <div className="mb-6">
                 <label
                   htmlFor="email"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-black"
+                  className="mb-2 block  text-[12px] font-bold  text-gray-900 dark:text-black sm:text-[12px]"
                 >
                   Your Email
                 </label>
@@ -524,7 +524,7 @@ function Booking() {
                   type="email"
                   bsSize="lg"
                   placeholder="Email"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-pink-500 focus:border-pink-500 block w-full p-2.5 dark:bg-white dark:border-gray-500 dark:placeholder-gray-400 dark:text-black dark:focus:ring-pink-500 dark:focus:border-pink-500"
+                  className="block h-14  w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-[10px] text-sm text-gray-900 focus:border-orange-500 focus:ring-orange-500 dark:border-gray-500 dark:bg-white dark:text-black dark:placeholder-gray-400 dark:focus:border-orange-500 dark:focus:ring-orange-500"
                   value={booking.email}
                   onChange={(e) => {
                     setBooking({
@@ -538,7 +538,7 @@ function Booking() {
             <div className="text-center">
               <div>
                 <button
-                  className="py-3 px-5 rounded-xl bg-pink-500 text-white ronded"
+                  className="ronded rounded-xl bg-orange-500 py-3 px-5 text-white"
                   onClick={() => {
                     reserve();
                   }}
