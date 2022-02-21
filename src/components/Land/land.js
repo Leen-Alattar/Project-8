@@ -69,35 +69,6 @@ export const Land = () => {
                     Today's Special
                   </h2>
                 </div>
-                {/* <div class="special-box">
-                  <div id="owl-demo">
-                    <div class="item item-type-zoom">
-                      <div class="item-img">
-                        <img src="images/special-menu-1.jpg" alt="sp-menu" />
-                      </div>
-                    </div>
-                    <div class="item item-type-zoom">
-                      <div class="item-img">
-                        <img src="images/special-menu-2.jpg" alt="sp-menu" />
-                      </div>
-                    </div>
-                    <div class="item item-type-zoom">
-                      <div class="item-img">
-                        <img src="images/special-menu-3.jpg" alt="sp-menu" />
-                      </div>
-                    </div>
-                    <div class="item item-type-zoom">
-                      <div class="item-img">
-                        <img src="images/special-menu-1.jpg" alt="sp-menu" />
-                      </div>
-                    </div>
-                    <div class="item item-type-zoom">
-                      <div class="item-img">
-                        <img src="images/special-menu-2.jpg" alt="sp-menu" />
-                      </div>
-                    </div>
-                  </div>
-                </div> */}
                 <Swiper
                   slidesPerView={3}
                   spaceBetween={30}
