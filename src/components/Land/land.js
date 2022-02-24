@@ -21,7 +21,10 @@ export const Land = () => {
             <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
               <div className="banner-static">
                 <div className="banner-text">
-                  <div className="banner-cell" style={{ paddingBottom: "210px" }}>
+                  <div
+                    className="banner-cell"
+                    style={{ paddingBottom: "210px" }}
+                  >
                     <h1>
                       Dinner with us
                       <span
@@ -66,10 +69,10 @@ export const Land = () => {
                   data-wow-delay="0.1s"
                 >
                   <h2 className="block-title color-white text-center">
-             
                     Today's Special
                   </h2>
                 </div>
+<<<<<<< HEAD
                 <div className="special-box">
                   {/* <div id="owl-demo">
                     <div className="item item-type-zoom">
@@ -99,6 +102,8 @@ export const Land = () => {
                     </div>
                   </div> */}
                 </div> 
+=======
+>>>>>>> 3057f1ba73b7faa3cc62b5eb7dd1cf6291dfd73a
                 <Swiper
                   slidesPerView={3}
                   spaceBetween={30}
