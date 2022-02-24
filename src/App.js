@@ -28,9 +28,10 @@ const App = () => {
   const [LoggedIn, setLoggedIn] = useState(false);
   const [counter, setCounter] = useState(0);
 
-  useEffect(() => {
+  useEffect(
+    () => {
     window.scrollTo(0, 0);
-  }, []);
+  },[]);
 
   useEffect(() => {
     if (!localStorage.getItem("booking")) {

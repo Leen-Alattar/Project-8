@@ -19,7 +19,7 @@ export const Header = ({ LoggedIn, setLoggedIn, counter, setCounter }) => {
   const logoutHandler = () => {
     setLoggedIn(false);
     sessionStorage.clear();
-    navigate(-1);
+    navigate("/");
   };
   return (
     <div>

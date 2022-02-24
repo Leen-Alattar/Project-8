@@ -31,11 +31,11 @@ function Booking() {
 
   const [booking, setBooking] = useState({
     name: sessionStorage.getItem("currentUser")
-      ? JSON.parse(sessionStorage.getItem("currentUser"))[0].name
+      ? JSON.parse(sessionStorage.getItem("currentUser")).name
       : "",
     phone: "",
     email: sessionStorage.getItem("currentUser")
-      ? JSON.parse(sessionStorage.getItem("currentUser"))[0].email
+      ? JSON.parse(sessionStorage.getItem("currentUser")).email
       : "",
   });
   // List of potential locations

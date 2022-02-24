@@ -37,6 +37,7 @@ const Cart = ({ cart, setCart, setEmptyCart, emptyCart }) => {
         }
       });
       localStorage.setItem("users", JSON.stringify(users));
+      sessionStorage.removeItem('cart');
       navigate("/success");
     } else {
       navigate("/login");

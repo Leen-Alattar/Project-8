@@ -32,18 +32,18 @@ console.log(reservations);
         <table>
           <thead>
             <tr>
-              <th scope="col">Table #</th>
+              <th scope="col">Table number</th>
               <th scope="col">location</th>
               <th scope="col">Time</th>
               <th scope="col">Date</th>
-              <th scope="col">Total price</th>
+              <th scope="col">No. of seats</th>
             </tr>
           </thead>
           <tbody>
           <tr>
             <td data-label="Table"> {table.id}</td>
             <td data-label="Location">{table.location}</td>
-            <td data-label="Time"> {table.reservation.time} JD</td>
+            <td data-label="Time"> {table.reservation.time} </td>
             <td data-label="Date" className="quantity">{table.reservation.date.slice(0, 10)} </td>
             <td data-label="Capcity"> {table.capacity}</td>
           </tr>     

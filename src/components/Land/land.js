@@ -71,7 +71,7 @@ export const Land = () => {
                   </h2>
                 </div>
                 <div className="special-box">
-                  <div id="owl-demo">
+                  {/* <div id="owl-demo">
                     <div className="item item-type-zoom">
                       <div className="item-img">
                         <img src="images/special-menu-1.jpg" alt="sp-menu" />
@@ -97,7 +97,7 @@ export const Land = () => {
                         <img src="images/special-menu-2.jpg" alt="sp-menu" />
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                 </div> 
                 <Swiper
                   slidesPerView={3}
@@ -105,9 +105,7 @@ export const Land = () => {
                   slidesPerGroup={1}
                   loop={true}
                   loopFillGroupWithBlank={true}
-                  pagination={{
-                    clickable: true,
-                  }}
+                  pagination={{clickable: true,}}
                   navigation={true}
                   modules={[Pagination, Navigation]}
                   className="mySwiper my-12"

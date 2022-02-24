@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const CartDish = ({ cart, setCart, dish, setTotalCart, totalCart }) => {
+  
   const [count, setCount] = useState(dish.total);
   const [total, setTotal] = useState(dish.price * dish.total);
 
@@ -68,7 +69,7 @@ const CartDish = ({ cart, setCart, dish, setTotalCart, totalCart }) => {
   };
 
   return (
-    
+
     <tr>
       <td data-label="Dish">
         <img width="100px" className="dish-image" src={dish.img} alt="" />
